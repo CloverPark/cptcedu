@@ -1,8 +1,4 @@
 
-.search-icon {
-	display: none;
-}
-
 .search-button {
 	background-color: $brand-purple;
 	color: white;
@@ -32,9 +28,9 @@
 	background-color: $brand-green;
 	
 	@include breakpoint(mama-bear){
-	/* we're using some absolute positioning to vertically and horizontally center the search icon */
+	/* spread the green background across the whole thing */
 		display: block;
-		background:url("../images/search-icon.png") center center no-repeat;
+		background: center center no-repeat;
 		right: 0;
 		top: 0;
 		bottom: 0;
@@ -78,8 +74,13 @@
 
 
 .search-icon {
+	display: none;
 	@include breakpoint(mama-bear){
-	display: block;
-	margin: 0 auto; /* horizontal center */
+		display: block;
+		position: absolute;
+		top: 50%;
+		margin-top: -16px; /* half the height of the icon for vertical centering */
+		left: 50%;
+		margin-left: -15px; /* half the width of the icon for horizontal centering */
 	}
 }
