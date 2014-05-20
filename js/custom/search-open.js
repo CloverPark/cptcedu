@@ -1,5 +1,5 @@
 $( document ).ready(function(){
-	$(".search-container").click(function(){
+	$(".search-icon").click(function(){
 		if($(".search-form").hasClass("search-form-open")) {
 			$(".search-form").removeClass("search-form-open");
 		}
