@@ -1,0 +1,18 @@
+.container,
+.home-images-container
+ {
+	margin: 0 auto;
+	@include breakpoint(baby-bear) {
+		width: $baby-bear; 
+	}
+	@include breakpoint(mama-bear) {
+		width: $mama-bear; 
+	}
+	@include breakpoint(papa-bear) {
+		width: $papa-bear; 
+	}
+}
+
+
+
+

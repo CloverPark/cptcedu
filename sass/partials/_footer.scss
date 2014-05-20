@@ -1,0 +1,99 @@
+.site-footer {
+	background-color: $brand-green;
+	margin-top: $gutter*2;
+	padding: 1.5rem 0;
+	text-align: center;
+	text-transform: uppercase;
+
+}
+
+.footer-links {
+	background-color: $darker-green;
+	margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+	display: block;
+	padding: .5rem 0;
+	@include color-link($text-color, no-border);
+}
+
+.footer-address {
+	padding: 1.5rem 0;
+	@include breakpoint(mama-bear) {
+		float: left;
+		padding: 2rem 8rem;
+	}
+	
+}
+
+.footer-top-row {
+	@include breakpoint(mama-bear){
+		display: inline-block;
+	}
+}
+
+.footer-seal {
+	@include breakpoint(mama-bear) {
+		float: left;
+	}
+}
+
+.footer-address-first-line {
+	@include breakpoint(mama-bear) {
+		font-weight: bold;
+	}
+}
+
+.footer-bottom-row {
+	@include breakpoint(mama-bear) {
+		padding-top: 3.5rem; /* same as the top/bottom padding for the footer as a whole */
+	}
+}
+
+
+.footer-links {
+	@include breakpoint(mama-bear) {
+		padding: .6rem 2rem; 
+		@include adjust-font-size-to($small);
+	}
+}
+
+.footer-links li {
+	@include breakpoint(mama-bear){
+		display: inline;
+	}
+}
+
+.footer-links a {
+	@include breakpoint(mama-bear) {
+		display: inline; /* undo the block style from smaller screens */
+		padding: 0 .8rem;
+		border-right: solid 1px white;
+	}
+}
+
+.footer-links li:last-child a {
+	@include breakpoint(mama-bear) {
+		border-right: none;
+	}
+}
+
+.footer-grant-icons {
+	@include breakpoint(mama-bear) {
+		padding-top: 1rem;
+	}
+}
+
+.footer-grant-icons li {
+	@include breakpoint(mama-bear) {
+		display: inline;
+		font-weight: bold;
+		padding-right: 3.5rem;
+	}
+}
+
+
+.footer-grant-icons li a {
+	@include color-link($brand-purple, no-border);
+}

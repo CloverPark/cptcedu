@@ -1,0 +1,69 @@
+/* Variables */
+
+$brand-purple: #502d7f;
+$brand-green: #bed600;
+$brand-grey: #939598;
+$darker-green: shade($brand-green, 10%);
+$site-grey: #ede9e9;
+
+
+$search-width: 5%;
+$gutter: 5px;
+
+/* breakpoints */
+
+$baby-bear: 768px;
+$mama-bear: 992px;
+$papa-bear: 1300px;
+
+
+/* use this like so: @include breakpoint(papa-bear) { whatevs; } */
+@mixin breakpoint($point) {
+  @if $point == papa-bear {
+    @media (min-width: $papa-bear) { @content; }
+  }
+  @else if $point == mama-bear {
+    @media (min-width: $mama-bear) { @content; }
+  }
+  @else if $point == baby-bear {
+    @media (min-width: $baby-bear)  { @content; }
+  }
+}
+
+
+@mixin mobile-padding {
+	padding: 0 1rem;
+}
+
+@mixin fade {
+	@include transition(all 0.3s ease-in-out);
+}
+
+/* as seem on the homepage */
+@mixin stripes($color2, $color1) {
+  background:
+    linear-gradient(
+      135deg,
+      $color1,
+      $color1 1px,
+        /* STRIPE 1 */
+        $color2 1px,
+        $color2 3px,
+        /* STRIPE 1 */
+      $color1 3px,
+      $color1 4px,
+        /* STRIPE 2 */
+        $color2 4px,
+        $color2 6px,
+        /* STRIPE 2 */
+      $color1 6px,
+      $color1 7px,
+        /* STRIPE 3 */
+        $color2 7px,
+        $color2 9px,
+        /* STRIPE 3 */
+      $color1 9px,
+      $color1 10px
+    );
+  background-size: 4px 8px;
+}

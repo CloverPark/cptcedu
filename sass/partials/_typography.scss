@@ -1,0 +1,59 @@
+
+/* fonts */
+$heading-font: "futura-pt-n5","futura-pt",sans-serif; /* the first font is an IE8 fallback */
+$text-font: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$text-color: #565655;
+
+
+/* typographic scale based on 1:1.2 ratio, with base font size of 14px. SASS converts all these to relative units. */
+$small: 11.7px;
+$base: 14px;
+$medium: 16.8px;
+$mediumlarge: 20.2px;
+$large: 24.2px;
+$xl: 29px;
+$xxl: 34.8px;
+$largest: 41.8px; 
+
+$font-unit: 1rem;
+$base-font-size: 14px;
+$base-line-height: 21px;
+@include establish-baseline;
+
+
+h1 {
+	@include adjust-font-size-to($largest);
+	 margin: 0 0 rhythm(1, $largest) 0; /* 1 line below */
+	font-family: $heading-font;
+}
+
+h2 {
+	@include adjust-font-size-to($xxl);
+	font-family: $heading-font;
+}
+
+h3 {
+	@include adjust-font-size-to($xl);
+	font-family: $heading-font;
+}
+
+h4 {
+	@include adjust-font-size-to($large);
+	font-family: $heading-font;
+}
+
+h5 {
+	@include adjust-font-size-to($mediumlarge);
+	font-family: $heading-font;
+}
+
+h6 {
+	@include adjust-font-size-to($medium);
+	font-family: $heading-font;
+}
+
+body {
+	@include adjust-font-size-to($base);
+	font-family: $text-font;
+	color: $text-color;
+}

@@ -1,0 +1,32 @@
+.home-news-stories {
+	margin-bottom: $gutter;
+
+
+.flexslider {
+	position: relative;
+}
+
+.flex-control-nav {
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	margin-left: -35px; /* centers this. Probably not the best way to do this */
+}
+
+.flex-control-nav li {
+	display: inline;
+	float: left;
+	text-align: center;
+}
+
+.flex-direction-nav a {
+	top: 63%; /* rought approximation of centering, since there's a title above it. Not the best way to do this, obv */
+}
+}
+
+.home-stories-title {
+	text-align: center;
+	line-height: 1.1;
+	margin: $gutter auto;
+	
+}

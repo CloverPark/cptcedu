@@ -1,0 +1,85 @@
+
+.search-icon {
+	display: none;
+}
+
+.search-button {
+	background-color: $brand-purple;
+	color: white;
+	@include breakpoint(mama-bear){
+		display: none; 
+		vertical-align: top; /* line it up with the search input */
+	}
+}
+
+.search-input {
+	@include breakpoint(mama-bear){
+		display: none; 
+		float: left;
+		vertical-align: middle;
+		width: 17rem; /* another magic number */ 
+		margin-right: $gutter;
+}
+}
+
+
+.search-container {
+	display: none;
+	position: absolute;
+	top: 400%; /* 100% plus the height of the nav */
+	left: 0;
+	padding: .5rem;
+	background-color: $brand-green;
+	
+	@include breakpoint(mama-bear){
+	/* we're using some absolute positioning to vertically and horizontally center the search icon */
+		display: block;
+		background:url("../images/search-icon.png") center center no-repeat;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		padding: 0;
+		left: auto;
+	}
+}
+
+.search-form-open {
+	width: 382px; /* magic number. adjust to match the photo beneath it */
+	background-color: $darker-green;
+	@include stripes($brand-green, $darker-green);
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	position: absolute;
+	right: 100%;
+	height: 100%;
+	z-index: 100; /* so it shows above the nav */
+	.search-button {
+		display: block;
+	}
+	.search-input {
+		display: block;
+	}
+}
+
+/* ghosting technique to vertically align the search bar */
+.search-form-open:before{
+	content:'';
+	display:inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+
+.search-form-wrapper {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+
+
+.search-icon {
+	@include breakpoint(mama-bear){
+	display: block;
+	margin: 0 auto; /* horizontal center */
+	}
+}

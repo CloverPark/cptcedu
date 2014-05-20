@@ -1,0 +1,47 @@
+.site-header{
+	background-color: $brand-green;
+	padding: 1rem;
+	position: relative; /* we're positioning the mobile nav relative to this */
+}
+
+.logo {
+	display: none;
+}
+
+.mobile-logo {
+	fill: $brand-purple;
+}
+
+.menu-icon {
+	float: right;
+	width: 2.5rem;
+}
+
+@include breakpoint(mama-bear) {
+
+.site-header {
+	padding: 0;
+}
+
+.menu-icon {
+	display: none;
+}
+
+.header-container {
+	position: relative;
+}
+
+.mobile-logo {
+	display: none;
+}
+
+.logo {
+	display: block;
+	width: 240px;
+
+	padding: 3rem 2rem;
+}
+
+
+
+}

@@ -1,0 +1,32 @@
+@import "compass/reset";
+@import "compass";
+@import "partials/base";
+@import "partials/global";
+@import "partials/icons";
+@import "partials/grid";
+@import "partials/layout";
+@import "partials/typography";
+@import "partials/links";
+@import "partials/tables";
+@import "partials/forms";
+@import "partials/footer";
+@import "partials/select";
+
+/* header partials */
+@import "partials/header/header";
+@import "partials/header/headerlinks";
+@import "partials/header/nav";
+@import "partials/header/search";
+@import "partials/header/navdropdown";
+@import "partials/header/socialicons";
+
+/* homepage partials */
+@import "partials/homepage/homehero";
+@import "partials/homepage/slider";
+@import "partials/homepage/homesubnav";
+@import "partials/homepage/homeportal";
+@import "partials/homepage/homenews";
+@import "partials/homepage/homestories";
+
+/*Plugins */
+@import "partials/flexslider";

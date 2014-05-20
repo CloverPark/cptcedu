@@ -1,0 +1,60 @@
+{
+  "name": "cptcicons",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "835190d2d23022b9669637e4030bfd43",
+      "css": "appbar.book.open",
+      "code": 59392,
+      "src": "custom_icons",
+      "selected": false,
+      "svg": {
+        "path": "M750 328.9L750 671.1L598.7 671.1C563.9 671.1 539.5 710.5 539.5 710.5L460.5 710.5C460.5 710.5 436.1 671.1 401.3 671.1L250 671.1L250 328.9L453.9 328.9C453.9 328.9 472.6 338.3 493.1 359.8C517.6 328.9 542.8 328.9 542.8 328.9L750 328.9ZM460.5 390.2C452 379.7 441.2 368.4 434.2 368.4L289.5 368.4L289.5 631.6L407.9 631.6C407.9 631.6 434.2 628.3 460.5 667.8L460.5 390.2ZM539.5 667.8C565.8 628.3 592.1 631.6 592.1 631.6L710.5 631.6L710.5 368.4L565.8 368.4C558.8 368.4 548 379.7 539.5 390.2L539.5 667.8Z",
+        "width": 1000
+      },
+      "search": [
+        "appbar.book.open"
+      ]
+    },
+    {
+      "uid": "bf882b30900da12fca090d9796bc3030",
+      "css": "mail",
+      "code": 59392,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "ad6b3fbb5324abe71a9c0b6609cbb9f1",
+      "css": "right-big",
+      "code": 59394,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "7222571caa5c15f83dcfd447c58d68d9",
+      "css": "search",
+      "code": 59395,
+      "src": "entypo"
+    },
+    {
+      "uid": "513ac180ff85bd275f2b736720cbbf5e",
+      "css": "home",
+      "code": 59393,
+      "src": "entypo"
+    },
+    {
+      "uid": "1e77a2yvsq3owssduo2lcgsiven57iv5",
+      "css": "pencil",
+      "code": 59396,
+      "src": "typicons"
+    },
+    {
+      "uid": "jh3jpcb1t1bcm80gidkadilh080aq79h",
+      "css": "menu",
+      "code": 59397,
+      "src": "typicons"
+    }
+  ]
+}

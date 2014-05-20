@@ -1,0 +1,56 @@
+/* table styles adapted from Bootstrap 2 */
+
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 2rem;
+}
+
+th,
+td {
+  padding: .8rem;
+  line-height: 2rem;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid $site-grey;
+}
+
+th {
+  font-weight: bold;
+}
+
+thead th {
+  vertical-align: bottom;
+}
+
+
+.table-condensed th,
+.table-condensed td {
+  padding: 4px 5px;
+  @include adjust-font-size-to($small);
+}
+
+.table-bordered {
+  border: 1px solid $site-grey;
+  border-collapse: separate;
+  *border-collapse: collapse;
+  border-left: 0;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border-left: 1px solid $site-grey;
+}
+
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: $site-grey;
+}
+
+.table-hover tbody tr:hover > td,
+.table-hover tbody tr:hover > th {
+  background-color: $brand-green; 
+}

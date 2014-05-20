@@ -1,0 +1,57 @@
+
+
+
+
+.home-news {
+	
+	padding: 1rem !important; /* hack. Fix this. It's overriding the last-column stuff */
+	@include breakpoint(baby-bear) {
+		padding: 0 !important;
+		margin-top: $gutter;
+	}
+	
+}
+
+
+
+.home-news-header {
+	text-align: center;
+	width: 100%;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: $brand-purple;
+	line-height: 1.75;
+}
+
+.home-news-date {
+	font-style: italic;
+	@include adjust-font-size-to($small);
+}
+
+.home-news-title {
+	@include adjust-font-size-to($medium);
+	font-family: $heading-font;
+	display: block;
+	@include color-link($brand-purple, no-border);
+}
+
+
+.home-events-table {
+	width: 100%;
+}
+
+.home-events-month {
+	width: 100%;
+	display: block;
+	text-align: center;
+	color: $brand-purple;
+	line-height: 1;
+	@include adjust-font-size-to($medium);
+}
+
+.home-events-date {
+	width: 100%;
+	display: block;
+	text-align: center;
+	line-height: 1;
+}

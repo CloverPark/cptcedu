@@ -1,0 +1,38 @@
+a {
+	text-decoration: none;
+	@include link-colors($brand-purple, $brand-green, $brand-green, $brand-purple, $brand-green);
+	/* don't like this right now
+	&:hover,
+	&:focus {
+		border-bottom: dotted 1px $brand-green;
+	}
+	*/
+}
+
+
+
+/* use like so: @include color-link($text-color, no-border); */
+@mixin color-link($color, $border) {
+	@include link-colors($color, $color);
+	@if $border == no-border {
+	&:hover,
+	&:focus {
+	border-bottom: none;
+	}
+	}
+	@else {
+	&:hover,
+	&:focus {
+		border-bottom: dotted 1px $color;
+	}
+}
+}
+
+@mixin no-hover {
+	&:hover,
+	&:focus {
+		border-bottom: none;
+		color: $brand-purple;
+	}
+}
+

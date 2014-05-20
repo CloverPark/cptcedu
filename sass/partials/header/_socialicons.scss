@@ -1,0 +1,30 @@
+.social-icons {
+	display: none;
+	position: absolute;
+	top: 400%;
+	right: 1rem;
+	z-index: 1000;
+	@include breakpoint(mama-bear){
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+.social-icons li {
+	display: inline;
+	
+	@include breakpoint(mama-bear){
+		background-color: $darker-green;
+		display: inline-block;
+		
+	}
+}
+
+.social-icons li img {
+	padding: .75rem;
+	@include breakpoint(mama-bear){
+		float: left;
+	}
+}

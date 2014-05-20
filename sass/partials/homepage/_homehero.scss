@@ -1,0 +1,110 @@
+.home-hero {
+	line-height: 0; /* fixes the space at the bottom */
+ }
+
+ .home-hero-wrapper{
+	 position: relative; /* for the absolute positioned cover */
+ }
+ 
+ .home-sub-hero-wrapper{
+	 position: relative;
+	 float: left;
+	 width: 50%;
+ 	&:last-child {
+ 		padding-left: $gutter/2;
+ 	}
+ 	&:first-child {
+ 		padding-right: $gutter/2;
+ 	}
+ 	@include breakpoint(mama-bear){	
+ 		width: 100%;
+ 		padding: 0 !important; /* hack, fix this */
+ 	}
+ }
+
+
+
+
+
+
+ .home-hero-cover {
+	 position: absolute;
+	 top: 0;
+	 bottom: 0;
+	 right: 0;
+	 left: 0;
+	 &:hover{
+	 	background-color: rgba(white, .9);
+		@include fade;
+	 }
+ }
+
+ .home-hero-cover p {
+	 opacity: 0;
+	  padding-right: 1.5rem;
+	 position: absolute;
+	 bottom: 7.5rem;
+	 left: -1rem;
+	 color: black; /* for a little more contrast */
+	 line-height: 1.25;
+	 
+ }
+ 
+ .home-hero-cover:hover p{
+	  @include fade;
+	 opacity: 1;
+	 
+	 left: 1.5rem;
+ }
+
+
+ .home-hero-header {
+	 @include adjust-font-size-to($mediumlarge);
+	 background-color: $brand-purple;
+	 display: inline;
+	 color: white;
+	 padding: .5rem;
+	 position: absolute;
+	 bottom: 1.5rem;
+	 left: 1.5rem;
+ }
+ 
+ 
+ .home-sub-hero-header {
+	 @include adjust-font-size-to($medium);
+	 text-align: center;
+	 background-color: rgba(black, .7);
+	 color: white;
+	 padding: 1rem;
+	 position: absolute;
+	 bottom: 0;
+	 left: 0;
+	 right: 0;
+	
+ }
+
+
+
+ .home-sub-hero {
+ 	@include breakpoint(baby-bear){
+ 		float: left;
+ 		display: inline;
+ 		padding-right: 0; /* override the column padding */
+ 	}
+ }
+
+.home-sub-hero-img {
+	float: left;
+	width: 100%;
+}
+
+.stripe-decor {
+	@include breakpoint(mama-bear){
+		height: 352px; /* height of the hero image */
+		@include stripes(#fff, shade(#bed600, 10%));
+	}
+	@include breakpoint(papa-bear){
+		height: 466px;
+	}
+}
+
