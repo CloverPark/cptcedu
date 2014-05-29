@@ -1,0 +1,37 @@
+.program-page-hero-container {
+	padding: 15px;
+	
+	
+	background-image: url("../images/welding.jpg"); /* obviously need to change those for different programs */
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	@include breakpoint(mama-bear){
+		height: 1000px;
+	}
+}
+
+.program-page-hero-frame {
+	margin: 0 auto;
+	text-align: center;
+	@include breakpoint(mama-bear){
+		padding-top: 200px;
+	}
+}
+
+.program-page-hero-title {
+	color: white;
+	line-height: 2;
+	@include breakpoint(mama-bear){
+		@include adjust-font-size-to($superbig);
+		line-height: 13rem; /* override adjust font size */
+	}
+}
+
+.program-page-hero-text {
+	color: white;
+	@include breakpoint(mama-bear){
+		@include adjust-font-size-to($xl);
+		line-height: 1.2;
+	}
+}
