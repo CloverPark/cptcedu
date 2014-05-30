@@ -5,13 +5,13 @@
 
 
 .program-page-selling-points-image {
-	width: 100px;
-	float: left;
-	padding-right: 20px;
+	height: 80px; /* dev. will resize actual images for production site */
+	padding-bottom: 10px;
 }
 
 .program-page-selling-point-wrapper {
 	background-color: $darker-green;
+	text-align: center;
 	
 	@include breakpoint(mama-bear){
 		padding: 30px;

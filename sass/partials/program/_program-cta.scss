@@ -13,39 +13,9 @@
 
 
 
-$triangle-size: 30px; /* adjust this to adjust the size of the triangle at the bottom of the hero image */
 
 .program-page-cta-triangle {
-	position: absolute;
-	top: -$triangle-size;
-	left: 50%;
-	margin-left: -$triangle-size; /* horizontal center */
-	width: 0; 
-	height: 0; 
-	border-left: $triangle-size solid $site-grey;
-	border-right: $triangle-size solid $site-grey;
-	border-top: $triangle-size solid transparent;
-	&:before{
-		content:'';
-		display: inline-block;
-		position: absolute;
-		width: 100000px; /* run off the edge of the page */
-		height: $triangle-size;
-		background: $site-grey;
-		top: -$triangle-size;
-		right: $triangle-size;
-	}
-	&:after{
-		content:'';
-		display: inline-block;
-		position: absolute;
-		width: 100000px; /* run off the edge of the page */
-		height: $triangle-size;
-		background: $site-grey;
-		top: -$triangle-size;
-		left: $triangle-size;
-	}
-	
+	@include program-triangle(30px, transparent, $site-grey);
 }
 
 .program-page-cta-div {

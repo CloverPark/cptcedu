@@ -1,17 +1,27 @@
 .program-page-degrees {
 	text-align: center;
+	padding: 50px 20px; /* same as the selling section */
+	background-color: rgba(black, .8);
+	background-image: url(../images/welding2.jpg);
+	background-size: cover;
+	color: white;	
 }
 
 .program-page-degree-title {
-	width: 100%;
-	text-align: center;
-	color: white;
-	background: $brand-purple;
 	text-transform: uppercase;
-	padding: 30px 0;
-	background-image: url("../images/grey-stripes.png");
 }
 
 .program-page-degrees-content {
 	padding: 30px 0;
+}
+
+
+.program-page-degrees-item-container {
+	text-align: center;
+}
+
+.program-page-degrees-item {
+	margin: 0 auto;
+	max-width: 400px;
+	padding: 20px;
 }

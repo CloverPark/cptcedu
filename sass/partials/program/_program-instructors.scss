@@ -1,6 +1,7 @@
 .program-page-instructors {
 	background-color: $site-grey;
 	text-align: center;
+	position: relative;
 }
 
 .program-page-instructors-title {
@@ -15,4 +16,10 @@
 	h5 {
 		
 	}
+}
+
+
+.program-page-instructors-triangle {
+	@include program-triangle(30px, transparent, $site-grey);
+	
 }
