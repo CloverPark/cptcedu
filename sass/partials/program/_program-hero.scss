@@ -1,13 +1,12 @@
 .program-page-hero-container {
 	padding: 15px;
-	
+	height: 275px; /* arbitrary number to allow space for all the text */
 	
 	background-image: url("../images/welding.jpg"); /* obviously need to change those for different programs */
 	background-repeat: no-repeat;
-	background-size: cover;
 	background-position: center top;
 	@include breakpoint(mama-bear){
-		height: 1000px;
+		height: 700px;
 	}
 }
 

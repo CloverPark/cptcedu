@@ -1,0 +1,23 @@
+.program-page-selling-points {
+	padding: 50px 20px;
+	
+}
+
+
+.program-page-selling-points-image {
+	width: 100px;
+	float: left;
+	padding-right: 20px;
+}
+
+.program-page-selling-point-wrapper {
+	background-color: $darker-green;
+	
+	@include breakpoint(mama-bear){
+		padding: 30px;
+		margin: 0 30px;
+		height: 300px;
+	}
+	
+	
+}
