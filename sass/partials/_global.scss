@@ -4,6 +4,18 @@
 	@include box-sizing(border-box);
 }
 
+
 img {
 	max-width: 100%;
 }
+
+/* clearfix */
+.cf:before,
+.cf:after {
+	    content: " "; 
+	    display: table; 
+	}
+
+.cf:after {
+	    clear: both;
+	}

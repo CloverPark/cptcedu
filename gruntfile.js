@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 		compass: {
 			dist: {
 				options: {
-					specify: 'sass/**/*.scss',
+					sassDir: 'sass',
 					cssDir: 'stylesheets',
 					environment: 'production'
 				}
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 
 		watch: {
 		    css: {
-		      files: ['sass/**/*.scss'], 
+		      files: ['sass/**/*.scss', 'sass/**/*.scss'], 
 		      tasks: ['compass:dist'],
 			  options: {
 				  livereload: true,

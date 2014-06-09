@@ -1,5 +1,13 @@
 @import "compass/reset";
 @import "compass";
+
+/*Plugins 
+* Put these first so that they're easy to override if needed.
+*/
+@import "partials/flexslider";
+
+
+
 @import "partials/base";
 @import "partials/global";
 @import "partials/icons";
@@ -28,5 +36,11 @@
 @import "partials/homepage/homenews";
 @import "partials/homepage/homestories";
 
-/*Plugins */
-@import "partials/flexslider";
+/* program page partials */
+@import "partials/program/program-hero";
+@import "partials/program/program-cta";
+@import "partials/program/program-selling";
+@import "partials/program/program-stories";
+@import "partials/program/program-degrees";
+@import "partials/program/program-instructors";
+@import "partials/program/program-student";

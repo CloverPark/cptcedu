@@ -13,7 +13,8 @@ $mediumlarge: 20.2px;
 $large: 24.2px;
 $xl: 29px;
 $xxl: 34.8px;
-$largest: 41.8px; 
+$largest: 41.8px;
+$superbig: 104px;  
 
 $font-unit: 1rem;
 $base-font-size: 14px;
@@ -30,6 +31,7 @@ h1 {
 h2 {
 	@include adjust-font-size-to($xxl);
 	font-family: $heading-font;
+	line-height: 1.2;
 }
 
 h3 {

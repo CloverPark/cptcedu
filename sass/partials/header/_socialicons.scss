@@ -2,7 +2,7 @@
 	display: none;
 	position: absolute;
 	top: 400%;
-	right: 1rem;
+	right: 10px;
 	z-index: 1000;
 	@include breakpoint(mama-bear){
 		display: block;
@@ -23,7 +23,7 @@
 }
 
 .social-icons li img {
-	padding: .75rem;
+	padding: 8px;
 	@include breakpoint(mama-bear){
 		float: left;
 	}

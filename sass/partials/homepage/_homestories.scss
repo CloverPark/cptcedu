@@ -1,6 +1,6 @@
 .home-news-stories {
 	margin-bottom: $gutter;
-
+}
 
 .flexslider {
 	position: relative;
@@ -8,9 +8,9 @@
 
 .flex-control-nav {
 	position: absolute;
-	bottom: 5px;
+	top: $gutter;
 	left: 50%;
-	margin-left: -35px; /* centers this. Probably not the best way to do this */
+	margin-left: -35px !important; /* override default plugin stuff */
 }
 
 .flex-control-nav li {
@@ -19,14 +19,41 @@
 	text-align: center;
 }
 
-.flex-direction-nav a {
-	top: 63%; /* rought approximation of centering, since there's a title above it. Not the best way to do this, obv */
+.flex-direction-nav a.flex-prev:before{
+	content: url(../images/left-arrow.png); 
 }
+
+.flex-direction-nav a.flex-next:before{
+	content: url(../images/right-arrow.png);
+}
+
+.home-stories-slider-thumbs li {
+	position: relative;
+	overflow: auto;
 }
 
 .home-stories-title {
 	text-align: center;
 	line-height: 1.1;
-	margin: $gutter auto;
-	
+	position: absolute;
+	padding: $gutter;
+	bottom: 0;
+	color: white;
+	background: black;
+	background: rgba(black, .7);
 }
+
+
+.home-stories {
+	@include breakpoint(baby-bear){
+		width: 50%;
+		padding-right: $gutter/2;
+		float: left;
+	}
+	
+	@include breakpoint(mama-bear){
+		width: 100%;
+		margin-right: 0;
+	}
+}
+

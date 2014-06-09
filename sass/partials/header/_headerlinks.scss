@@ -5,12 +5,13 @@
 }
 
 .header-links {
-	/* dev display: none; */
+	display: none; 
 	position: absolute;
 	top: 100%; 
 	left: 0;
 	width: 30%;
 	height: 400%;
+	background-color: $darker-green;
 	background-color: rgba($darker-green, .95);
 	z-index: 10; /* so it shows above the images on small views */
 	@include breakpoint(mama-bear){
@@ -27,8 +28,8 @@
 }
 
 .header-links li {
-	padding: 0 1rem 0 1rem;
-	margin: 1rem 0;
+	padding: 0 10px 0 10px;
+	margin: 10px 0;
 	@include breakpoint(mama-bear){
 		display: inline;
 		float: left;
@@ -40,12 +41,12 @@
 .header-links a {
 	background-color: white;
 	display: block;
-	padding: .5rem;
+	padding: 5px;
 	@include breakpoint(mama-bear){
 		background-color: transparent;
 		color: #fff;
 		float: left;
-		padding: .6rem 1.5rem;
+		padding: 6px 15px;
 		font-family: $heading-font;
 		font-weight: 200;
 		@include adjust-font-size-to($medium);

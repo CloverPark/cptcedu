@@ -1,6 +1,6 @@
 .site-header{
 	background-color: $brand-green;
-	padding: 1rem;
+	padding: 10px;
 	position: relative; /* we're positioning the mobile nav relative to this */
 }
 
@@ -14,7 +14,7 @@
 
 .menu-icon {
 	float: right;
-	width: 2.5rem;
+	width: 25px;
 }
 
 @include breakpoint(mama-bear) {
@@ -38,8 +38,7 @@
 .logo {
 	display: block;
 	width: 240px;
-
-	padding: 3rem 2rem;
+	padding: 30px 20px;
 }
 
 

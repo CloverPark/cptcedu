@@ -5,10 +5,14 @@
 	background-image: url("../images/welding.jpg"); /* obviously need to change those for different programs */
 	background-repeat: no-repeat;
 	background-position: center top;
+	background-size: cover;
 	@include breakpoint(mama-bear){
 		height: 700px;
+		background-size: initial;
 	}
 }
+
+
 
 .program-page-hero-frame {
 	margin: 0 auto;

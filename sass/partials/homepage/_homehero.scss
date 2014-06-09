@@ -22,75 +22,92 @@
  	}
  }
 
-
-
-
-
-
  .home-hero-cover {
 	 position: absolute;
 	 top: 0;
-	 bottom: 0;
+	 bottom: -1px; /* sort of hacky, but covers the weird pixel at the bottom. And if it goes over in some browsers, it's just white on white background and thus invisible */
 	 right: 0;
 	 left: 0;
+	 @include background(linear-gradient(transparent, transparent));
 	 &:hover{
-	 	background-color: rgba(white, .9);
+		@include background(linear-gradient(rgba(white, .4), rgba(white, .9)));
 		@include fade;
 	 }
  }
 
  .home-hero-cover p {
 	 opacity: 0;
-	  padding-right: 1.5rem;
+	 padding-right: 15px;
 	 position: absolute;
-	 bottom: 7.5rem;
-	 left: -1rem;
+	 bottom: 75px;
+	 left: -10px;
 	 color: black; /* for a little more contrast */
 	 line-height: 1.25;
-	 
+	 @include adjust-font-size-to($medium);
  }
  
  .home-hero-cover:hover p{
 	  @include fade;
 	 opacity: 1;
-	 
-	 left: 1.5rem;
+	 left: 15px;
  }
-
 
  .home-hero-header {
 	 @include adjust-font-size-to($mediumlarge);
 	 background-color: $brand-purple;
 	 display: inline;
 	 color: white;
-	 padding: .5rem;
+	 padding: 5px;
 	 position: absolute;
-	 bottom: 1.5rem;
-	 left: 1.5rem;
+	 bottom: 15px;
+	 left: 15px;
  }
  
- 
  .home-sub-hero-header {
-	 @include adjust-font-size-to($medium);
 	 text-align: center;
+	 background-color: black;
 	 background-color: rgba(black, .7);
 	 color: white;
-	 padding: 1rem;
+	 padding: 10px;
 	 position: absolute;
 	 bottom: 0;
 	 left: 0;
 	 right: 0;
-	
+	@include adjust-font-size-to($medium);
+ }
+ 
+ .home-sub-hero-wrapper:last-child {
+	 @include breakpoint(mama-bear){
+	 margin-top: $gutter;
+ }
+ }
+ 
+ /* prevent a unibrow effect without a bunch of extra HTML */
+ .home-sub-hero-wrapper:first-child .home-sub-hero-header {
+	 right: $gutter/2;
+	 @include breakpoint(mama-bear){
+		 right: 0;
+	 }
+ }
+ 
+ .home-sub-hero-wrapper:last-child .home-sub-hero-header {
+	 left: $gutter/2;
+	 @include breakpoint(mama-bear){
+		 left: 0;
+	 }
  }
 
-
-
  .home-sub-hero {
+	 margin-top: $gutter;
  	@include breakpoint(baby-bear){
  		float: left;
  		display: inline;
  		padding-right: 0; /* override the column padding */
+		
  	}
+	@include breakpoint(mama-bear){
+		margin-top: 0;
+	}
  }
 
 .home-sub-hero-img {
@@ -101,10 +118,9 @@
 .stripe-decor {
 	@include breakpoint(mama-bear){
 		height: 352px; /* height of the hero image */
-		@include stripes(#fff, shade(#bed600, 10%));
+		background-image: url("../images/green-stripes.png");
 	}
 	@include breakpoint(papa-bear){
 		height: 466px;
 	}
 }
-

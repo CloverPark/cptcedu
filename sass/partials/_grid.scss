@@ -41,7 +41,9 @@ $col24: 4.1666666%*24;
 }
 
 [class*='col']:last-of-type {
+	@include breakpoint(mama-bear) {
   padding-right: 0;
+}
 }
 
 @include breakpoint(mama-bear) {

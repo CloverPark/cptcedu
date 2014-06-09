@@ -1,7 +1,7 @@
 select {
 	background-color: $brand-grey;
-	max-width: 20rem;
+	max-width: 200px;
 	color: #fff;
 	@include adjust-font-size-to($medium);
-	padding: .5rem;
+	padding: 5px;
 }

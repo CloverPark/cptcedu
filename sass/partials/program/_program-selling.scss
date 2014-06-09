@@ -1,5 +1,7 @@
 .program-page-selling-points {
+	@include breakpoint(mama-bear){
 	padding: 50px 20px;
+}
 	
 }
 
@@ -12,12 +14,25 @@
 .program-page-selling-point-wrapper {
 	background-color: $darker-green;
 	text-align: center;
-	
+	padding: 30px;
+	margin: 30px;
+	color: white;
 	@include breakpoint(mama-bear){
-		padding: 30px;
-		margin: 0 30px;
 		height: 300px;
 	}
-	
-	
+	a {
+		@include link-colors($brand-purple, white);
+	}
+}
+
+.program-page-selling-points-heading {
+	line-height: 1.4;
+}
+
+.program-page-selling-point-text {
+	text-align: center;
+	p {
+		max-width: 40rem;
+		margin: 0 auto;
+	}
 }

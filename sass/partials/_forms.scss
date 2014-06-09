@@ -9,8 +9,8 @@ option:hover {
 
 input {
 	border: 2px solid transparent;
-	padding: .3rem;
-	margin-bottom: .7rem;
+	padding: 3px;
+	margin-bottom: 7px;
 	outline: none;
 	@include adjust-font-size-to($base);
 	&:focus {
@@ -23,7 +23,7 @@ button {
 	border: none;
 	color: $brand-purple;
 	font-weight: bold;
-	padding: .75rem;
+	padding: 8px;
 	text-transform: uppercase;
 	&:hover {
 		@include fade;

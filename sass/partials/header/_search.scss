@@ -1,34 +1,42 @@
 
 .search-button {
-	background-color: $brand-purple;
-	color: white;
+
 	@include breakpoint(mama-bear){
+		background-color: $brand-purple;
+		color: white;
 		display: none; 
 		vertical-align: top; /* line it up with the search input */
 	}
 }
 
 .search-input {
+	margin-bottom: 0; /* clear out input style */
+	width: 130px; /* magic! */
 	@include breakpoint(mama-bear){
 		display: none; 
 		float: left;
 		vertical-align: middle;
-		width: 17rem; /* another magic number */ 
+		width: 170px; /* another magic number */ 
 		margin-right: $gutter;
+		&:focus {
+			border-color: $brand-purple;
+		}
 }
 }
 
 
 .search-container {
-	display: none;
+	display: none; /* will show with js */
+	z-index: 1000;
 	position: absolute;
-	top: 400%; /* 100% plus the height of the nav */
+	top: 400% + 100%; /* 100% plus the height of the nav */
 	left: 0;
-	padding: .5rem;
+	padding: 5px;
 	background-color: $brand-green;
-	
+	background-color: rgba($brand-grey, .95);
 	@include breakpoint(mama-bear){
 	/* spread the green background across the whole thing */
+		background-color: $brand-green;
 		display: block;
 		background: center center no-repeat;
 		right: 0;
@@ -42,9 +50,9 @@
 .search-form-open {
 	width: 382px; /* magic number. adjust to match the photo beneath it */
 	background-color: $darker-green;
-	@include stripes($brand-green, $darker-green);
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
+	background-image: url(../images/grey-stripes.png);
+	padding-left: 15px;
+	padding-right: 15px;
 	position: absolute;
 	right: 100%;
 	height: 100%;

@@ -1,29 +1,35 @@
 .home-second-row {
 	margin-top: $gutter;
-
 }
 
 .portal {
 	background-color: $site-grey;
 	float: left;
 /*	margin-top: $gutter; */
-	padding: 1rem;
+	padding: 10px;
 	width: 100%;
 	@include breakpoint(baby-bear) {
 		padding: 0;
-		padding-bottom: 5rem; /* give this space to get below the events section */
+		padding-bottom: 20px; /* give this space to get below the events section */
+	}
+	@include breakpoint(mama-bear){
+		min-height: 410px;
+	}
+	
+	@include breakpoint(papa-bear){
+		min-height: 465px; /* sort of hacky. trying to keep it more or less level with the events section on the left. */
 	}
 }
 
 .portal-section {
 	@include breakpoint(baby-bear) {
-		padding: 1rem;
+		padding: 10px;
 		width: 50%;
 		float: left;
 	}
 	@include breakpoint(mama-bear) {
-		padding-left: 2rem;
-		padding-right: 2rem;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 }
 
@@ -31,7 +37,7 @@
 	color: $brand-purple;
 	text-transform: uppercase;
 	font-weight: bold;
-	margin-top: 1.5rem;
+	margin-top: 15px;
 }
 
 .portal-links li {
@@ -43,7 +49,7 @@
 	margin-top: $gutter;
 	label {
 		line-height: 1;
-		padding-left: .2rem; /* make it look more aligned */
+		padding-left: 2px; /* make it look more aligned */
 	}
 	input {
 		width: 70%;	

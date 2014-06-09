@@ -3,8 +3,7 @@
 
 
 .home-news {
-	
-	padding: 1rem !important; /* hack. Fix this. It's overriding the last-column stuff */
+	padding: 10px !important; /* hack. Fix this. It's overriding the last-column stuff */
 	@include breakpoint(baby-bear) {
 		padding: 0 !important;
 		margin-top: $gutter;
@@ -36,9 +35,49 @@
 }
 
 
-.home-events-table {
+.home-events {
 	width: 100%;
+	@include breakpoint(baby-bear){
+		width: 50%;
+		padding-left: $gutter/2;
+		float: left;
+	}
+	@include breakpoint(mama-bear){
+		width: 100%;
+		padding-left: 0;
+		
+	}
 }
+
+
+.home-events-row {
+	position: relative; /* popups are relative to this */
+	padding: 5px 0;
+	border-bottom: solid 1px $site-grey;
+	float: left;
+	width: 100%;
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+/* activated with js */
+.home-events-row-active {
+	background-color: $darker-green;
+	color: white;
+}
+
+
+.home-events-date-wrapper {
+	width: 25%;
+	float: left;
+}
+
+.home-events-title {
+	width: 75%;
+	float: left;
+}
+
 
 .home-events-month {
 	width: 100%;
@@ -49,9 +88,28 @@
 	@include adjust-font-size-to($medium);
 }
 
+
 .home-events-date {
 	width: 100%;
 	display: block;
 	text-align: center;
 	line-height: 1;
+}
+
+.home-events-popup {
+	background-color: white;
+	display: none; /* will show with js */
+	padding: 10px;
+	border: solid 3px $darker-green;
+	position: absolute;
+	top: 100%;
+	z-index: 1000;
+	color: $text-color; /* override the color from home-events-row-active */
+}
+
+.home-events-expand {
+	color: $brand-purple;
+	font-weight: bold;
+	margin-left: 20px;
+	padding: 5px;
 }

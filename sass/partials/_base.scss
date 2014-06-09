@@ -1,4 +1,8 @@
-/* Variables */
+/*
+*********
+COLORS
+*********
+*/
 
 $brand-purple: #502d7f;
 $brand-green: #bed600;
@@ -6,18 +10,31 @@ $brand-grey: #939598;
 $darker-green: shade($brand-green, 10%);
 $site-grey: #ede9e9;
 
+/* 
+*********
+GUTTER WIDTH
+*********
+*/
 
-$search-width: 5%;
 $gutter: 5px;
 
-/* breakpoints */
+/* 
+************
+breakpoints 
+************
+*/
 
 $baby-bear: 768px;
 $mama-bear: 992px;
 $papa-bear: 1300px;
 
+/*
+******
+Breakpoint mixin
+use this like so: @include breakpoint(papa-bear) { whatevs; } 
+*******
+*/
 
-/* use this like so: @include breakpoint(papa-bear) { whatevs; } */
 @mixin breakpoint($point) {
   @if $point == papa-bear {
     @media (min-width: $papa-bear) { @content; }
@@ -30,40 +47,53 @@ $papa-bear: 1300px;
   }
 }
 
-
-@mixin mobile-padding {
-	padding: 0 1rem;
-}
+/* 
+*********
+Fade animation
+so we can keep these consistent throughout
+*********
+*/
 
 @mixin fade {
 	@include transition(all 0.3s ease-in-out);
 }
 
-/* as seem on the homepage */
-@mixin stripes($color2, $color1) {
-  background:
-    linear-gradient(
-      135deg,
-      $color1,
-      $color1 1px,
-        /* STRIPE 1 */
-        $color2 1px,
-        $color2 3px,
-        /* STRIPE 1 */
-      $color1 3px,
-      $color1 4px,
-        /* STRIPE 2 */
-        $color2 4px,
-        $color2 6px,
-        /* STRIPE 2 */
-      $color1 6px,
-      $color1 7px,
-        /* STRIPE 3 */
-        $color2 7px,
-        $color2 9px,
-        /* STRIPE 3 */
-      $color1 9px,
-      $color1 10px
-    );
-  background-size: 4px 8px;
+
+
+/* triangles. used on program pages */
+
+
+
+@mixin program-triangle($size, $color, $bg-color) {
+	position: absolute;
+	top: -$size;
+	left: 50%;
+	margin-left: -$size; /* horizontal center */
+	width: 0; 
+	height: 0; 
+	border-left: $size solid $bg-color;
+	border-right: $size solid $bg-color;
+	border-top: $size solid $color;
+	&:before{
+		content:'';
+		display: inline-block;
+		position: absolute;
+		width: 100000px; /* run off the edge of the page */
+		height: $size;
+		background: $bg-color;
+		top: -$size;
+		right: $size;
+	}
+	&:after{
+		content:'';
+		display: inline-block;
+		position: absolute;
+		width: 100000px; /* run off the edge of the page */
+		height: $size;
+		background: $bg-color;
+		top: -$size;
+		left: $size;
+	}	
 }
+
+

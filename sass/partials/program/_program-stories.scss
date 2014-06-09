@@ -5,7 +5,9 @@
 }
 
 .program-page-stories-wrapper {
+	@include breakpoint(mama-bear){
 	padding: 50px 20px; /* same as the selling section */
+}
 }
 
 .program-page-stories-title {
@@ -19,7 +21,7 @@
 }
 
 .program-page-stories-item {
-	margin: 0 30px; /* same as selling items */
+	margin: 30px; /* same as selling items */
 	
 }
 

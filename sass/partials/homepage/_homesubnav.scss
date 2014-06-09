@@ -16,7 +16,7 @@
 .sub-nav li a {
 	display: block;
 	font-family: $heading-font;
-	padding: .7rem;
+	padding: 7px;
 	@include color-link(#fff, no-border);
 	text-transform: uppercase;
 	@include breakpoint(baby-bear) {
@@ -37,7 +37,7 @@
 .apply-button {
 	background-color: $brand-green;
 	display: block;
-	padding: .7rem;
+	padding: 7px;
 	font-family: $heading-font;
 	font-weight: bold;
 	margin-bottom: $gutter;
@@ -75,6 +75,6 @@
 	@include breakpoint(mama-bear){
 		display: block;
 		float: right;
-		height: 1rem;
+		height: 10px;
 	}
 }

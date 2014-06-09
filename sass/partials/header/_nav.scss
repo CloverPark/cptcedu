@@ -1,14 +1,16 @@
 .site-nav {
-	/* display: none; dev will show with javascript. */
+	display: none; /* will show with javascript. */
 	position: absolute;
-	top: 100%; 
+	top: 100%;
+	background-color: $brand-purple; 
 	background-color: rgba($brand-purple, .95);
 	width: 70%;
 	height: 400%; /* same height as headerlinks */
 	right: 0;
-	z-index: 10; /* so it shows above the carousel on mobile */
+	z-index: 10; /* so it shows above the carousel on mobile. This is also used as an identifier in js to see if mobile menu should be activated */
 	@include breakpoint(mama-bear){
 		display: block;
+		z-index: 11; /* used as identifier in js to see if mobile menu should be deactivated */
 		height: auto;
 		top: auto;
 		width: auto;
@@ -27,7 +29,6 @@
 }
 
 .site-nav-container {
-	
 	@include breakpoint(mama-bear){
 	padding: 0; /* override the default gutter */
 	position: relative; /* the headerlinks are positioned relative to this */
@@ -44,12 +45,22 @@
 .site-nav > ul > li {
 	display: inline-block;
 	width: 100%;
-	padding: .75rem 0 .75rem 1rem;
+	padding: 8px 0 8px 10px;
 	border-bottom: solid 1px white;
+	&:after{
+		content:url('../images/arrow.png');
+		float: right;
+		padding-right: 15px;
+	}
+	
 	@include breakpoint(mama-bear){
 		width: auto;
 		padding: 0;
 		border-bottom: none;
+		&:after {
+			content: none;
+			padding-right: 0;
+		}
 	}
 }
 
@@ -59,7 +70,7 @@
 	@include breakpoint(mama-bear){
 		display: inline-block;
 		color: $brand-green;
-		padding: 4rem 3.8rem;
+		padding: 56px 53px;
 		text-align: center;
 		font-family: $heading-font;
 		font-weight: 200;
@@ -72,5 +83,5 @@
 }
 
 .site-nav > ul > li > a:hover {
-	@include stripes($brand-purple, tint($brand-purple, 10%)); 
+	background-image: url("../images/grey-stripes.png"); 
 }
