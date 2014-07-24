@@ -7,8 +7,13 @@
 }
 
 .footer-links {
+	@extend .unstyled;
 	background-color: $darker-green;
-	margin-bottom: 15px;
+	margin-bottom: 15px !important; /* yes, I know */
+	@include breakpoint(mama-bear) {
+		padding: 6px 20px; 
+		@include adjust-font-size-to($small);
+	}
 }
 
 .footer-links a {
@@ -23,7 +28,6 @@
 		float: left;
 		padding: 20px 80px;
 	}
-	
 }
 
 .footer-top-row {
@@ -50,14 +54,6 @@
 	}
 }
 
-
-.footer-links {
-	@include breakpoint(mama-bear) {
-		padding: 6px 20px; 
-		@include adjust-font-size-to($small);
-	}
-}
-
 .footer-links li {
 	@include breakpoint(mama-bear){
 		display: inline;
@@ -79,6 +75,7 @@
 }
 
 .footer-grant-icons {
+	@extend .unstyled;
 	@include breakpoint(mama-bear) {
 		padding-top: 10px;
 	}
@@ -91,7 +88,6 @@
 		padding-right: 35px;
 	}
 }
-
 
 .footer-grant-icons li a {
 	@include color-link($brand-purple, no-border);

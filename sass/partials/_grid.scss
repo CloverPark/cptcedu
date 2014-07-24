@@ -1,3 +1,5 @@
+/* all the row-fluid and span classes are legacy classes from when we used Bootstrap 2. It's easier to list them here than to hunt them all down in the HTMl, but eventually we can get rid of them */
+
 $col1: 4.1666666%;
 $col2: 4.1666666%*2;
 $col3: 4.1666666%*3;
@@ -25,122 +27,139 @@ $col24: 4.1666666%*24;
 
 
 
-.grid:after {
+.grid:after,
+.row-fluid:after
+ {
   content: "";
   display: table;
   clear: both;
 }
 
-[class*='col'] {
+/* mixin so that all the columns get the same properties; width varies for larger screens */
+@mixin column($width) {
 	width: 100%;
 	float: left;
 	@include breakpoint(mama-bear) {
+		width: $width;
 		margin-top: 0;
 		padding-right: $gutter;
+		&:last-of-type {
+			 padding-right: 0;
+		}
 	}
+	
 }
 
-[class*='col']:last-of-type {
-	@include breakpoint(mama-bear) {
-  padding-right: 0;
-}
-}
+
+
 
 @include breakpoint(mama-bear) {
 
-.col1 {
-	width: $col1;
+.col1, {
+	@include column($col1);
 }
 
-.col2 {
-	width: $col2;
+.col2,
+.span1 {
+	@include column($col2);
 }
 
 .col3 {
-	width: $col3;
+	@include column($col3);
 }
 
-.col4 {
-	width: $col4;
+.col4,
+.span2 {
+	@include column($col4);
 }
 
 .col5 {
-	width: $col5;
+	@include column($col5);
 }
 
-.col6 {
-	width: $col6;
+.col6,
+.span3 {
+	@include column($col6);
 }
 
 .col7 {
-	width: $col7;
+	@include column($col7);
 }
 
-.col8 {
-	width: $col8;
+.col8,
+.span4{
+	@include column($col8);
 }
 
 .col9 {
-	width: $col9;
+	@include column($col9);
 }
 
-.col10 {
-	width: $col10;
+.col10,
+.span5 {
+	@include column($col10);
 }
 
 .col11 {
-	width: $col11;
+	@include column($col11);
 }
 
-.col12 {
-	width: $col12;
+.col12,
+.span6 {
+	@include column($col12);
 }
 .col13 {
-	width: $col13;
+	@include column($col13);
 }
 
-.col14 {
-	width: $col14;
+.col14,
+.span7 {
+	@include column($col14);
 }
 
 .col15 {
-	width: $col15;
+	@include column($col15);
 }
 
-.col16 {
-	width: $col16;
+.col16,
+.span8 {
+	@include column($col16);
 }
 
 .col17 {
-	width: $col17;
+	@include column($col17);
 }
 
-.col18 {
-	width: $col18;
+.col18,
+.span9 {
+	@include column($col18);
 }
 
 .col19 {
-	width: $col19;
+	@include column($col19);
 }
 
-.col20 {
-	width: $col20;
+.col20,
+.span10 {
+	@include column($col20);
 }
 
 .col21 {
-	width: $col21;
+	@include column($col21);
 }
 
-.col22 {
-	width: $col22;
+.col22,
+.span11 {
+	@include column($col22);
 }
 
 .col23 {
-	width: $col23;
+	@include column($col23);
 }
 
-.col24 {
-	width: $col24;
+.col24,
+.span12 {
+	@include column($col24);
 }
 
 

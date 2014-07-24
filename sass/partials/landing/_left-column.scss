@@ -1,0 +1,77 @@
+.landing-page {
+	margin: 15px;
+	@include breakpoint(mama-bear){
+		margin: 30px auto;
+	}
+}
+
+
+.landing-left-column {
+	@include breakpoint(mama-bear){
+		padding-right: 30px;
+		border-right: solid 1px $site-grey;
+	}
+}
+
+.landing-list {
+	@include breakpoint(mama-bear){
+		padding-left: 30px;
+	}
+}
+
+.landing-img-div {
+	display: none; /* ideally we'll hide this with picturefill, but right now this'll have to do */
+	@include breakpoint(mama-bear){
+		display: block;
+	}
+}
+
+.line-header {
+	text-transform: uppercase;
+	padding: 0;
+	padding-bottom: 3px;
+	border-bottom: solid 1px #333;
+	margin-bottom: 10px;
+}
+
+.landing-section {
+	margin-bottom: 15px;
+}
+
+.landing-section-text {
+	background: $site-grey;
+	@include breakpoint (mama-bear){
+		height: 114px; /* the height stuff is sort of hacky, but the alternative is probably worse */
+	}
+	@include breakpoint (papa-bear){
+		height: 144px;
+	}
+}
+
+.landing-section-text p {
+	padding: 5px 15px;
+	margin: 0;
+}
+
+.landing-section-links {
+	padding-left: 15px;
+	
+}
+
+.landing-section-links ul {
+	@extend .unstyled;
+	margin-top: 15px;
+	@include breakpoint(mama-bear){
+		margin-top: 0; /* undo margin from small view */
+	}
+}
+
+.landing-section-links li {
+	@include adjust-font-size-to($mediumlarge); /* for usability; makes them easier to touch */
+	line-height: 1.5;
+	@include breakpoint(mama-bear){
+		@include adjust-font-size-to($base)
+	}
+	
+}
+

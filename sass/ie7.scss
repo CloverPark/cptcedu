@@ -1,0 +1,61 @@
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+
+
+.stripe-decor {
+display: none;
+}
+
+.shame-div {
+	display: none;
+}
+
+.sub-nav {
+	display: block;
+}
+
+.sub-nav > li {
+	width: 32%;
+	float: left;
+}
+
+.enroll-wrapper {
+	width: 26% !important;
+}
+
+/* Helps fix the menu-behind-the-carousel problem */
+header {
+z-index: 1000;
+}
+
+/* Helps fix the menu-behind-the-carousel problem */
+.site-nav {
+	display: block;
+	z-index: 5000;
+}
+
+.nav-section,
+.main-nav-links {
+	z-index: 1000 !important;
+}
+
+/* keep the search bar on a single line */
+.search-form input {
+	width: 60%;
+}
+
+.content-page-sidebar {
+	width: 20% !important;
+}
+
+
+.landing-left-column {
+	width: 17% !important;	
+}
+
+.landing-section-links {
+	width: 28% !important;
+}

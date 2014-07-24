@@ -1,0 +1,18 @@
+.breadcrumb {
+	display: inline-block;
+	padding: 8px 15px;
+	margin: 0 0 20px 0;
+	list-style: none;
+	background-color: $site-grey;
+	font-size: $medium;
+}
+
+.breadcrumb li {
+	display: inline;
+}
+
+.breadcrumb > li > .divider {
+	/* legacy */
+  padding: 0 5px;
+  color: #ccc;
+}

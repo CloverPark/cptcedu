@@ -8,7 +8,7 @@ option:hover {
 }
 
 input {
-	border: 2px solid transparent;
+	border: 2px solid $brand-purple;
 	padding: 3px;
 	margin-bottom: 7px;
 	outline: none;
@@ -18,16 +18,3 @@ input {
 	}
 }
 
-button {
-	background-color: $brand-green;
-	border: none;
-	color: $brand-purple;
-	font-weight: bold;
-	padding: 8px;
-	text-transform: uppercase;
-	&:hover {
-		@include fade;
-		background-color: $darker-green;
-		cursor: pointer;
-	}	
-}

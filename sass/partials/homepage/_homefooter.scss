@@ -1,0 +1,31 @@
+.home-bottom-nav {
+	background-color: $site-grey;
+	margin-top: 4*$gutter;
+	margin-bottom: -$gutter;
+	padding: $gutter;
+	@include breakpoint(mama-bear){
+		padding: 2*$gutter 0;
+	}
+}
+
+.home-bottom-nav-header {
+	margin: 0;
+}
+
+.home-bottom-nav-list {
+	@extend .unstyled;
+	margin: 7px 0 21px 0;
+	a {
+		@include link-colors(tint(black, 20%), tint(black, 50%));
+	}
+}
+
+.sub-footer-button {
+	width: 100%;
+	display: block;
+	margin: 0 0 $gutter 0;
+	@include button($brand-purple);
+	i {
+		padding-right: 7px;
+	}
+}

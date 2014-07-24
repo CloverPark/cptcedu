@@ -1,0 +1,230 @@
+.home-fourth-row {
+	@include breakpoint(mama-bear){
+		margin-top: 2*$gutter;
+	}
+}
+
+.home-callout-row {
+	padding: 0 $gutter;
+	@include breakpoint(baby-bear){
+		padding: 0;
+	}
+}
+
+.home-callout-row-1 {
+	@extend .home-callout-row;
+}
+
+.home-callout-row-2 {
+	@extend .home-callout-row;
+	margin: $gutter 0 2*$gutter 0;
+}
+
+@mixin home-callout-row-size($fraction) {
+	@include breakpoint(baby-bear){
+		width: (768px - 3*$gutter) / $fraction; /* one third of the width of this section, minus the gutters */
+		float: left;
+		margin-right: $gutter;
+		padding-right: 0;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	@include breakpoint(mama-bear) {
+		width: (661px - 3*$gutter) / $fraction; /* width of grid minus gutters divided by three */
+	}
+	@include breakpoint(papa-bear) {
+		width: (866.6px - 3*$gutter) / $fraction; /* width of grid minus gutters divided by three. Actual width is 867px, but Chrome is doing something strange with the rounding. This fixes that. */
+	}
+}
+
+
+.home-callout-row-item-large {
+	@include breakpoint(baby-bear){
+		width: (768px - 3*$gutter) / 2 + 15px; /* one third of the width of this section, minus the gutters */
+		float: left;
+		margin-right: $gutter;
+		padding-right: 0;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	@include breakpoint(mama-bear) {
+		width: ((661px - 3*$gutter) / 2) + 15px; /* width of grid minus gutters divided by three */
+	}
+	@include breakpoint(papa-bear) {
+		width: (866.6px - 3*$gutter) / 2 + 15px; /* width of grid minus gutters divided by three. Actual width is 867px, but Chrome is doing something strange with the rounding. This fixes that. */
+	}
+}
+
+.home-callout-row-item-small{
+	@include home-callout-row-size(4);
+}
+
+@mixin home-callout($color) {
+	@include link-colors(white, white);
+	cursor: pointer;
+	display: block;
+	background: $color;
+	font-family: $heading-font;
+	@include adjust-font-size-to($mediumlarge);
+	text-transform: uppercase;
+	text-align: center;
+	padding: 8px;
+	margin-bottom: $gutter;
+	&:hover {
+		@include fade;
+		background: shade($color, 30%);
+	}
+	@include breakpoint(mama-bear){
+		margin: 0;
+		@include adjust-font-size-to($medium);
+	}
+	@include breakpoint(papa-bear){
+		@include adjust-font-size-to($mediumlarge);
+	}
+}
+
+
+.home-callout-1 {
+	@include home-callout($brand-alt-green);
+}
+
+.home-callout-2 {
+	@include home-callout($brand-grey);
+}
+
+.home-callout-3 {
+	@include home-callout($brand-alt-purple);
+	margin: 0; // this one will have a double margin on smaller views
+}
+
+.home-callout-4 {
+	@include home-callout($brand-purple);
+}
+
+.home-callout-5 {
+	@include home-callout($darker-green);
+}
+
+.home-callout-6 {
+	@include home-callout(tint(black, 30%));
+}
+
+
+
+.home-community-resources {
+	padding: 0 $gutter;
+	@include breakpoint(baby-bear){
+		padding: 0;
+	}
+}
+
+.community-header {
+	margin: 4px 0;
+}
+
+.community-row {
+	margin-bottom: $gutter;
+	p {
+		margin: 0;
+	}
+}
+
+
+.resources-item {
+	width: 50%;
+	float: left;
+	&:nth-child(1){
+		padding: 0 $gutter/2 $gutter/2 0;
+		@include breakpoint(baby-bear) {
+			padding: 0;
+		}
+	}
+	&:nth-child(2){
+		padding: 0 0 $gutter/2 $gutter/2;
+		@include breakpoint(baby-bear) {
+			padding: 0;
+		}
+	}
+	&:nth-child(3){
+		padding: $gutter/2 $gutter/2 0 0;
+		@include breakpoint(baby-bear) {
+			padding: 0;
+		}
+	}
+	&:nth-child(4){
+		padding: $gutter/2 0 0 $gutter/2;
+		@include breakpoint(baby-bear) {
+			padding: 0;
+		}
+	}
+	
+	@include breakpoint(baby-bear){
+		width: (768px - 3*$gutter)/4;
+		margin-right: $gutter;
+		&:last-child{
+			margin-right: 0;
+		}
+		
+	}
+	
+	
+	@include breakpoint(mama-bear){
+		width: (661px - 3*$gutter)/4;
+	}
+	
+	@include breakpoint(papa-bear){
+		width: (866.5px - 3*$gutter)/4; // same rounding error
+	}
+}
+
+
+.home-services-wrapper {
+	position: relative;
+	line-height: 0;
+}
+
+
+
+.home-services-title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	color: white;
+	margin: 0;
+	padding: $gutter 0;
+	z-index: 1000;
+	font-weight: 600;
+}
+
+
+@mixin home-services-cover($color) {
+	@extend .cover;
+	&:hover { 
+		background-color: rgba($color, .9);
+		@include fade;
+	}	
+}
+
+
+.home-services-cover-1 {
+	@include home-services-cover($brand-purple);
+}
+
+.home-services-cover-2 {
+	@include home-services-cover($brand-alt-green);
+}
+
+
+.home-services-cover-3 {
+	@include home-services-cover($brand-grey);
+}
+
+
+.home-services-cover-4 {
+	@include home-services-cover($brand-alt-purple);
+}
+

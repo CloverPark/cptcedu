@@ -1,24 +1,30 @@
 .program-page-instructors {
-	background-color: $site-grey;
+	
 	text-align: center;
 	position: relative;
+	
 }
 
+
+
+
 .program-page-instructors-title {
-	padding: 30px 0;
+	padding: 10px 0 40px 0;
 	text-transform: uppercase;
-	color: $darker-green;
+	color: white;
+	background: $darker-green;
 }
 
 .program-page-instructor-item {
 	margin: 30px;
-	h5 {
-		
-	}
-}
-
-
-.program-page-instructors-triangle {
-	@include program-triangle(30px, transparent, $site-grey);
+	padding: 30px;
 	
 }
+
+.program-page-instructors-triangle {
+	@include program-triangle(30px, transparent, $darker-green);
+	
+}
+
+
+

@@ -1,0 +1,31 @@
+.program-page {
+	margin-top: 30px;
+	padding: 15px;
+	@include breakpoint (mama-bear) {
+		padding: 0;
+	}
+}
+
+.program-page .carousel img {
+	width: 100%;
+}
+
+.program-page .grey-header {
+	width: 100%;
+	background-color: $brand-purple;
+	color: white;
+	margin-top: 30px;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+
+.program-page h1 {
+	margin-bottom: 15px;
+}
+
+.program-page .left-top {
+	@include breakpoint(mama-bear){
+		padding-right: 30px;
+	}
+	
+}

@@ -1,32 +1,92 @@
 .program-page-selling-points {
+	margin: 15px 0; /* makes the spacing between boxes look even without using pseudo selectors */
 	@include breakpoint(mama-bear){
-	padding: 50px 20px;
-}
-	
+		padding: 50px 20px;
+		margin: 0;
+	}
 }
 
 
-.program-page-selling-points-image {
-	height: 80px; /* dev. will resize actual images for production site */
-	padding-bottom: 10px;
+
+.program-page-selling-points-row-bg {
+	/* used only for the mama bear screen size, which is a two-column layout for the boxes */
+	@include breakpoint (mama-bear){
+		float: left;
+		width: 100%;
+		margin-top: 30px;
+		@include background-image (linear-gradient(
+			left,
+			$darker-green 0%,
+			$darker-green 49%,
+			white 49%,
+			white 51%,
+			$darker-green 51%,
+			$darker-green 100%
+		));
+	}
+	@include breakpoint (papa-bear){
+		float: none;
+		width: auto;
+		margin-top: 0;
+		background-image: none;
+	}
+}
+
+
+.program-page-selling-points-bg {
+	@include breakpoint(papa-bear){
+		@include background-image (linear-gradient(
+			left,
+			$darker-green 0%,
+			$darker-green 24%,
+			white 24%,
+			white 26%,
+			$darker-green 26%,
+			$darker-green 49%,
+			white 49%,
+			white 51%,
+			$darker-green 51%,
+			$darker-green 74%,
+			white 74%,
+			white 76%,
+			$darker-green 76%,
+			$darker-green 100%
+		));
+	}
+}
+
+
+.program-page-selling-points .col6 {
+	@include breakpoint(mama-bear){
+		width: 50%; /* override default column width */
+	}
+	@include breakpoint (papa-bear){
+		width: 25%; /* restore default width */
+	}
 }
 
 .program-page-selling-point-wrapper {
-	background-color: $darker-green;
 	text-align: center;
 	padding: 30px;
-	margin: 30px;
-	color: white;
+	margin: 15px 30px;
+	color: black;
+	background-color: $darker-green;
 	@include breakpoint(mama-bear){
-		height: 300px;
+		background-color: transparent; /* undo the background, which is being done through the wrapper element for multiple-column layouts */
+		margin: 30px;
 	}
-	a {
-		@include link-colors($brand-purple, white);
-	}
+}
+
+.program-page-selling-points-image {
+	padding-bottom: 10px;
 }
 
 .program-page-selling-points-heading {
 	line-height: 1.4;
+}
+
+.program-page-selling-point-wrapper a {
+	@include link-colors($brand-purple, white);
 }
 
 .program-page-selling-point-text {
@@ -35,4 +95,14 @@
 		max-width: 40rem;
 		margin: 0 auto;
 	}
+	@include breakpoint(mama-bear){
+		margin-top: 50px; /* matches padding at bottom of section */
+	}
 }
+
+
+
+
+
+
+

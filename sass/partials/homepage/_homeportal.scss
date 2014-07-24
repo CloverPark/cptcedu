@@ -40,6 +40,11 @@
 	margin-top: 15px;
 }
 
+.portal-links {
+	@extend .unstyled;
+}
+
+
 .portal-links li {
 	border-bottom: solid 1px white;
 	line-height: 2;
@@ -54,6 +59,17 @@
 	input {
 		width: 70%;	
 	}
+	.form-submit {
+		@extend .btn; /* add the button styles to the drupal form button */
+		margin: 0; /* override button margins */
+		width: auto; /*override the width from the input */
+	}
+	
+	.form-item,
+	.form-actions {
+		margin: 0; /*override Drupal defaults */
+	}
+	
 }
 
 

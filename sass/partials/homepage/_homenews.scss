@@ -1,59 +1,15 @@
-
-
-
-
-.home-news {
-	padding: 10px !important; /* hack. Fix this. It's overriding the last-column stuff */
-	@include breakpoint(baby-bear) {
-		padding: 0 !important;
-		margin-top: $gutter;
-	}
-	
-}
-
-
-
-.home-news-header {
-	text-align: center;
-	width: 100%;
-	text-transform: uppercase;
-	color: #fff;
-	background-color: $brand-purple;
-	line-height: 1.75;
-}
-
-.home-news-date {
-	font-style: italic;
-	@include adjust-font-size-to($small);
-}
-
-.home-news-title {
-	@include adjust-font-size-to($medium);
-	font-family: $heading-font;
-	display: block;
-	@include color-link($brand-purple, no-border);
-}
-
-
 .home-events {
 	width: 100%;
-	@include breakpoint(baby-bear){
-		width: 50%;
-		padding-left: $gutter/2;
-		float: left;
-	}
+	padding: $gutter;
 	@include breakpoint(mama-bear){
 		width: 100%;
-		padding-left: 0;
-		
+		padding: 0;		
 	}
 }
-
 
 .home-events-row {
 	position: relative; /* popups are relative to this */
-	padding: 5px 0;
-	border-bottom: solid 1px $site-grey;
+	padding: 15px 0;
 	float: left;
 	width: 100%;
 	&:hover{
@@ -62,45 +18,63 @@
 }
 
 /* activated with js */
-.home-events-row-active {
-	background-color: $darker-green;
-	color: white;
+.home-events-row-active .home-events-title {
+	color: $darker-green;
 }
 
-
 .home-events-date-wrapper {
-	width: 25%;
+	
 	float: left;
+	position: relative;
+	width: 20%;
+	max-width: 65px;
+	@include breakpoint(papa-bear){
+		
+	}
+}
+
+.home-events-date-bg {
+	border: solid 1px $brand-purple;
 }
 
 .home-events-title {
-	width: 75%;
+	width: 80%;
 	float: left;
+	font-family: $heading-font;
+	padding-left: $gutter;
+	@include adjust-font-size-to($medium);
+	i:before {
+		margin: 0;
+		padding-left: 4px;
+		vertical-align: bottom;
+	}
 }
-
 
 .home-events-month {
 	width: 100%;
 	display: block;
+	padding: 4px 0;
 	text-align: center;
-	color: $brand-purple;
-	line-height: 1;
+	background-color: $brand-purple;
+	color: white;
 	@include adjust-font-size-to($medium);
 }
-
 
 .home-events-date {
 	width: 100%;
 	display: block;
 	text-align: center;
 	line-height: 1;
+	padding: 6px 0;
 }
 
 .home-events-popup {
 	background-color: white;
 	display: none; /* will show with js */
 	padding: 10px;
+	width: 100%;
 	border: solid 3px $darker-green;
+	border-top: solid 6px $darker-green;
 	position: absolute;
 	top: 100%;
 	z-index: 1000;
@@ -112,4 +86,12 @@
 	font-weight: bold;
 	margin-left: 20px;
 	padding: 5px;
+	float: right;
+}
+
+.event-calendar-link i {
+	&:before{
+		margin: 0;
+		padding-right: 7px;
+	}
 }

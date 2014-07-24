@@ -1,0 +1,80 @@
+.home-button-row {
+	margin-top: $gutter;
+	padding: 0 $gutter;
+	@include breakpoint(baby-bear) {
+		padding: 0;
+	}
+}
+
+.home-button-wrapper {
+	// these aren't in the grid system because they need to be equal width; not having padding on the last one messes that up
+	@include breakpoint(baby-bear) {
+		width: ($baby-bear - 30px) / 3; /* width of grid minus gutters divided by three */
+		float: left;
+		margin-right: $gutter;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	@include breakpoint(mama-bear) {
+		width: ($mama-bear - 30px) / 3; /* width of grid minus gutters divided by three */
+	}
+	@include breakpoint(papa-bear) {
+		width: ($papa-bear - 30px) / 3; /* width of grid minus gutters divided by three */
+	}
+}
+
+
+
+@mixin home-button($bg-color) {
+	@include button($bg-color);
+	display: block;
+	padding: 7px;
+	font-family: $heading-font;
+	font-weight: bold;
+	margin: 0;
+	margin-bottom: $gutter;
+	text-align: center;
+	text-transform: uppercase;
+	@include adjust-font-size-to($mediumlarge);
+	@include breakpoint(baby-bear){
+		@include adjust-font-size-to($base);
+	}	
+	@include breakpoint(mama-bear) {
+		margin-bottom: 0; /* cancel the gutter used on smaller sizes */
+		@include adjust-font-size-to($mediumlarge);
+	}
+	i:before{
+		vertical-align: bottom;
+	}
+	
+}
+
+.apply-button {
+	@include home-button($brand-green);
+}
+
+.program-button {
+	@include home-button($brand-grey);
+}
+
+.visit-button {
+	@include home-button($brand-purple);
+	margin-bottom: 0;
+}
+
+.home-study {
+	display: none; /* hidden by default; activated by js */
+	padding: $gutter;
+	border: solid $gutter $brand-grey;
+}
+
+.home-study ul {
+	@extend .unstyled;
+	@include adjust-font-size-to($medium);
+	margin-bottom: 2*$gutter;
+	@include pretty-bullets("../images/bullet-arrow.png"); /* should probably make this a site-wide thing */
+	li {
+		padding-bottom: 5px;
+	}
+}

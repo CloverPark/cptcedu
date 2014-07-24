@@ -1,0 +1,84 @@
+.tabs {
+	display: none; /* hides the drupal tabs by default. When you're logged in they're still visible */
+}
+
+ul {
+    list-style-type: disc; 
+    list-style-position: inside; 
+	margin: 14px 0 14px 1em;
+}
+
+ol { 
+	list-style-type: decimal;
+    list-style-position: inside; 
+	margin: 14px 0 14px 1em;
+}
+
+.unstyled {
+	list-style-type: none;
+	margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 10px 25px;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+li {
+  line-height: 20px;
+}
+
+dl {
+  margin-bottom: 20px;
+}
+
+dt,
+dd {
+  line-height: 20px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.dl-horizontal {
+  *zoom: 1;
+}
+
+.dl-horizontal:before,
+.dl-horizontal:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.dl-horizontal:after {
+  clear: both;
+}
+
+.dl-horizontal dt {
+  float: left;
+  width: 160px;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dl-horizontal dd {
+  margin-left: 180px;
+}

@@ -1,22 +1,29 @@
 
 .search-button {
-
+	height: 30px; /* make this same height as input */
+	line-height: 30px;
+	padding: 0 8px; /* line-height does the vertical padding */
+	float: left;
 	@include breakpoint(mama-bear){
 		background-color: $brand-purple;
 		color: white;
 		display: none; 
-		vertical-align: top; /* line it up with the search input */
+		&:hover {
+			background-color: tint($brand-purple, 10);
+		}
 	}
 }
 
 .search-input {
 	margin-bottom: 0; /* clear out input style */
-	width: 130px; /* magic! */
+	height: 30px;
+	width: 16em; /* enough space for most searches */
+	float: left;
 	@include breakpoint(mama-bear){
 		display: none; 
 		float: left;
 		vertical-align: middle;
-		width: 170px; /* another magic number */ 
+	
 		margin-right: $gutter;
 		&:focus {
 			border-color: $brand-purple;
@@ -34,6 +41,7 @@
 	padding: 5px;
 	background-color: $brand-green;
 	background-color: rgba($brand-grey, .95);
+	width: 100%;
 	@include breakpoint(mama-bear){
 	/* spread the green background across the whole thing */
 		background-color: $brand-green;
@@ -44,11 +52,17 @@
 		bottom: 0;
 		padding: 0;
 		left: auto;
+		width: $col1;
 	}
 }
 
+
+.search-form {
+	text-align: center; /* cneter the search-wrapper */
+}
+
 .search-form-open {
-	width: 382px; /* magic number. adjust to match the photo beneath it */
+	width: 0;
 	background-color: $darker-green;
 	background-image: url(../images/grey-stripes.png);
 	padding-left: 15px;
@@ -57,13 +71,18 @@
 	right: 100%;
 	height: 100%;
 	z-index: 100; /* so it shows above the nav */
-	.search-button {
-		display: block;
-	}
-	.search-input {
-		display: block;
-	}
 }
+
+
+.search-form-open .search-button {
+	display: block;
+}
+
+.search-form-open .search-input {
+	display: block;
+}
+
+
 
 /* ghosting technique to vertically align the search bar */
 .search-form-open:before{

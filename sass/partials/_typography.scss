@@ -22,40 +22,63 @@ $base-line-height: 21px;
 @include establish-baseline;
 
 
-h1 {
-	@include adjust-font-size-to($largest);
-	 margin: 0 0 rhythm(1, $largest) 0; /* 1 line below */
+
+/* this is all the common properties for the headings. Size changes for each one */
+@mixin heading-size ($h-size) {
+	@include adjust-font-size-to($h-size);
+	margin: 0 0 rhythm(1, $h-size) 0; /* 1 line below */
 	font-family: $heading-font;
+	line-height: 1.2;
+	font-weight: 200;
+}
+
+h1 {
+	@include heading-size($largest);
 }
 
 h2 {
-	@include adjust-font-size-to($xxl);
-	font-family: $heading-font;
-	line-height: 1.2;
+	@include heading-size($xxl);
 }
 
 h3 {
-	@include adjust-font-size-to($xl);
-	font-family: $heading-font;
+	@include heading-size($xl);
 }
 
 h4 {
-	@include adjust-font-size-to($large);
-	font-family: $heading-font;
+	@include heading-size($large);
 }
 
 h5 {
-	@include adjust-font-size-to($mediumlarge);
-	font-family: $heading-font;
+	@include heading-size($mediumlarge);
+	text-transform: uppercase;
+	color: $brand-purple;
 }
 
 h6 {
-	@include adjust-font-size-to($medium);
-	font-family: $heading-font;
+	@include heading-size($medium);
+	text-transform: uppercase;
+	color: $brand-purple;
 }
 
 body {
 	@include adjust-font-size-to($base);
 	font-family: $text-font;
 	color: $text-color;
+}
+
+p,
+address,
+.btn {
+	margin: 14px 0;
+}
+
+.small-text {
+	@include adjust-font-size-to($small);
+	line-height: 1.2;
+}
+
+/* used in headings on the apply page, for example */
+small {
+	display: block;
+	font-size: .8em;
 }

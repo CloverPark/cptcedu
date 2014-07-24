@@ -19,6 +19,10 @@
 	}
 }
 
+.nav-dropdown ul {
+	@extend .unstyled;
+}
+
 .site-nav > ul > li:hover .nav-dropdown {
 	@include breakpoint(mama-bear){
 	display: block;

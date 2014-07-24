@@ -1,59 +1,73 @@
-.home-news-stories {
-	margin-bottom: $gutter;
-}
-
-.flexslider {
-	position: relative;
-}
-
-.flex-control-nav {
-	position: absolute;
-	top: $gutter;
-	left: 50%;
-	margin-left: -35px !important; /* override default plugin stuff */
-}
-
-.flex-control-nav li {
-	display: inline;
-	float: left;
-	text-align: center;
-}
-
-.flex-direction-nav a.flex-prev:before{
-	content: url(../images/left-arrow.png); 
-}
-
-.flex-direction-nav a.flex-next:before{
-	content: url(../images/right-arrow.png);
-}
-
-.home-stories-slider-thumbs li {
-	position: relative;
-	overflow: auto;
-}
-
-.home-stories-title {
-	text-align: center;
-	line-height: 1.1;
-	position: absolute;
+.home-stories-wrapper {
+	background: $site-grey;
 	padding: $gutter;
-	bottom: 0;
-	color: white;
-	background: black;
-	background: rgba(black, .7);
+	margin-top: $gutter;
+	@include breakpoint(mama-bear){
+	padding: 2*$gutter 0;
+	}
+}
+
+.home-stories-row {
+	margin-top: $gutter; 
+	h6 {
+		text-transform: none;
+	}
 }
 
 
-.home-stories {
+.home-stories-row .col6 {
+	//overriding some of the default column behavior for baby bear screen size
 	@include breakpoint(baby-bear){
-		width: 50%;
-		padding-right: $gutter/2;
+		width: ($baby-bear - 30px) / 3;
+		padding-right: 0;
+		margin-right: $gutter;
 		float: left;
+		&:nth-child(3) {
+			margin-right: 0;
+		}
+		&:nth-child(4){
+			width: 100%;
+		}
+	}
+	@include breakpoint(mama-bear){
+		width: $col6;
+		margin-right: 0;
+		padding-right: $gutter;
+		&:nth-child(3) {
+			padding-right: $gutter;
+		}
+		&:nth-child(4){
+			width: $col6;
+			padding-right: 0;
+		}
 	}
 	
+	
+}
+
+.more-news-header {
 	@include breakpoint(mama-bear){
-		width: 100%;
-		margin-right: 0;
+	margin-left: 25px; /* same as margin for lists */
+}
+}
+
+.home-news-list {
+	@include pretty-bullets("../images/bullet-arrow.png"); /* should probably make this a site-wide thing */
+	
+	li {
+		margin-bottom: 1em;
+	}
+	@include breakpoint(mama-bear){
+		padding-left: 25px;	
 	}
 }
 
+
+.all-news-link {
+	float: right;
+	i:before {
+		margin: 0;
+		vertical-align: bottom;
+	}
+	
+}

@@ -1,14 +1,17 @@
 .program-page-hero-container {
+	/* all background images are loaded through the CMS */
 	padding: 15px;
-	height: 275px; /* arbitrary number to allow space for all the text */
-	
-	background-image: url("../images/welding.jpg"); /* obviously need to change those for different programs */
+	height: 275px; /* allow space for all the text */
 	background-repeat: no-repeat;
-	background-position: center top;
-	background-size: cover;
+	background-position: 50% 0; /* centers it even if the image is cropped */
+	@include breakpoint(baby-bear) {
+		height: 400px;	
+	}
 	@include breakpoint(mama-bear){
-		height: 700px;
-		background-size: initial;
+		height: 600px; /* this is the height set by skrollr.js. It's here as a fallback */
+	}
+	@include breakpoint(papa-bear){
+		background-size: cover !important; /* stretches to fit, since we don't want a super-huge image in there.  */
 	}
 }
 
@@ -18,7 +21,7 @@
 	margin: 0 auto;
 	text-align: center;
 	@include breakpoint(mama-bear){
-		padding-top: 200px;
+		padding-top: 100px;
 	}
 }
 
@@ -38,3 +41,5 @@
 		line-height: 1.2;
 	}
 }
+
+

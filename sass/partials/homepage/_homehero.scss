@@ -2,78 +2,125 @@
 	line-height: 0; /* fixes the space at the bottom */
  }
 
+ .home-hero-img {
+	 width: 100%; /* images are actually just slightly too small for some of the views; this stretches them to make them fit */
+ }
+
  .home-hero-wrapper{
 	 position: relative; /* for the absolute positioned cover */
  }
  
- .home-sub-hero-wrapper{
+.home-sub-hero-wrapper{
 	 position: relative;
 	 float: left;
 	 width: 50%;
- 	&:last-child {
- 		padding-left: $gutter/2;
+	 
+	 /* all this gutter/2 stuff is just a way to keep the titles from looking like a unibrow across the gutter */
+	 &:last-child {
+		padding-left: $gutter/2;
+		.home-hero-cover {
+			left: $gutter/2;
+		}
+	}
+	&:first-child {
+		padding-right: $gutter/2;
+		.home-hero-cover {
+			right: $gutter/2;
+		}
+	}
+	 @include breakpoint(mama-bear){
+		 /* height of main hero image is 331px at this size. These each are that - 15px (for the gutter) divided by two
+		 * It's just a small crop, so not a big deal, and not worth the overhead of doing picturefill */
+		 height: 158px;
+		 overflow: hidden;
+		 width: auto;
+		 padding: 0 !important; /* hack, fix this */		 
  	}
- 	&:first-child {
- 		padding-right: $gutter/2;
- 	}
- 	@include breakpoint(mama-bear){	
- 		width: 100%;
- 		padding: 0 !important; /* hack, fix this */
- 	}
- }
+	@include breakpoint(papa-bear){
+		height: auto;
+	}
+}
 
  .home-hero-cover {
-	 position: absolute;
-	 top: 0;
+	@extend .cover;
 	 bottom: -1px; /* sort of hacky, but covers the weird pixel at the bottom. And if it goes over in some browsers, it's just white on white background and thus invisible */
-	 right: 0;
+	
+	 overflow: hidden;
+	 &:hover {
+		 background: rgba($brand-grey, .85);
+		 @include fade;	 
+	 }
+	 @include breakpoint (mama-bear){
+	  right: $gutter;
+	 }
+ }
+ 
+ .home-sub-hero-wrapper .home-hero-cover {
+	 @include breakpoint(mama-bear){
+		 right: 0 !important; /* undo hack from above */
+	 	left: 0 !important;
+	}
+ }
+ 
+
+ .home-hero-cover p {
+	 padding: 30px;
+	 position: absolute;
+	 opacity: 0;
 	 left: 0;
-	 @include background(linear-gradient(transparent, transparent));
-	 &:hover{
-		@include background(linear-gradient(rgba(white, .4), rgba(white, .9)));
-		@include fade;
+	 bottom: 90px;
+	 color: white; /* for a little more contrast */
+	 line-height: 1.25;
+	 @include adjust-font-size-to($mediumlarge);
+ }
+ 
+ .home-hero-cover:hover {
+	 cursor: pointer;
+	 p {
+		 opacity: 1;
+		 transition: opacity 0.3s .1s ease;
 	 }
  }
 
- .home-hero-cover p {
-	 opacity: 0;
-	 padding-right: 15px;
-	 position: absolute;
-	 bottom: 75px;
-	 left: -10px;
-	 color: black; /* for a little more contrast */
-	 line-height: 1.25;
-	 @include adjust-font-size-to($medium);
- }
- 
- .home-hero-cover:hover p{
-	  @include fade;
-	 opacity: 1;
-	 left: 15px;
- }
-
- .home-hero-header {
-	 @include adjust-font-size-to($mediumlarge);
-	 background-color: $brand-purple;
+ .home-hero-header,
+ .home-sub-hero-header {
+	 background-color: rgba($brand-purple, .7);
 	 display: inline;
 	 color: white;
-	 padding: 5px;
-	 position: absolute;
-	 bottom: 15px;
-	 left: 15px;
+	 margin: 0;
+	 position: absolute;	
+	 bottom: 0;
+	 left: 0;
+	 width: 100%;
+	 text-align: center;
+	 @include breakpoint(mama-bear){
+		 bottom: 40px;
+		 background-color: $brand-purple;
+		 width: auto;
+ 	}
+ }
+ 
+ .home-hero-header {
+	  @include adjust-font-size-to($xl);
+	  line-height: 1;
+	  padding: 10px;
+	  @include breakpoint(mama-bear){
+		  left: 40px;
+  	}
  }
  
  .home-sub-hero-header {
-	 text-align: center;
-	 background-color: black;
-	 background-color: rgba(black, .7);
-	 color: white;
-	 padding: 10px;
-	 position: absolute;
-	 bottom: 0;
-	 left: 0;
-	 right: 0;
 	@include adjust-font-size-to($medium);
+	padding: $gutter/2;
+	 line-height: 1.2;
+	 @extend .cover;
+	 @include breakpoint(mama-bear) {
+		 padding: 6px;
+		 left: $gutter;
+		 bottom: $gutter;
+		 right: auto;
+		 top: auto;
+	 }
  }
  
  .home-sub-hero-wrapper:last-child {
@@ -82,20 +129,7 @@
  }
  }
  
- /* prevent a unibrow effect without a bunch of extra HTML */
- .home-sub-hero-wrapper:first-child .home-sub-hero-header {
-	 right: $gutter/2;
-	 @include breakpoint(mama-bear){
-		 right: 0;
-	 }
- }
- 
- .home-sub-hero-wrapper:last-child .home-sub-hero-header {
-	 left: $gutter/2;
-	 @include breakpoint(mama-bear){
-		 left: 0;
-	 }
- }
+
 
  .home-sub-hero {
 	 margin-top: $gutter;
@@ -103,24 +137,34 @@
  		float: left;
  		display: inline;
  		padding-right: 0; /* override the column padding */
-		
+		width: 100%; /* fix a safari bug */
  	}
 	@include breakpoint(mama-bear){
 		margin-top: 0;
+		width: $col9;
 	}
  }
 
-.home-sub-hero-img {
+.home-sub-hero-wrapper img {
 	float: left;
-	width: 100%;
+	@include breakpoint(baby-bear){
+		width: 100%; /* safari bug */
+	}
+	@include breakpoint(mama-bear){
+		width: auto;
+	}
+}
+
+.home-sub-hero-wrapper .home-hero-cover p{
+	
 }
 
 .stripe-decor {
 	@include breakpoint(mama-bear){
-		height: 352px; /* height of the hero image */
+		 height: 331px; /* height of the hero image */
 		background-image: url("../images/green-stripes.png");
 	}
 	@include breakpoint(papa-bear){
-		height: 466px;
+		 height: 437px; 
 	}
 }

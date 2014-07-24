@@ -1,4 +1,4 @@
-$( document ).ready(function(){
+$( document ).ready(function() {
 		$(".home-events-row").click(function(){
 			
 			if($(".home-events-popup", this).hasClass("home-events-popup-open")) {

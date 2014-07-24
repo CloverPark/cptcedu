@@ -5,6 +5,7 @@
 * Put these first so that they're easy to override if needed.
 */
 @import "partials/flexslider";
+@import "partials/fancybox";
 
 
 
@@ -19,6 +20,12 @@
 @import "partials/forms";
 @import "partials/footer";
 @import "partials/select";
+@import "partials/breadcrumb";
+@import "partials/button";
+@import "partials/list";
+@import "partials/alert";
+@import "partials/embed-container";
+@import "partials/collapse";
 
 /* header partials */
 @import "partials/header/header";
@@ -30,11 +37,12 @@
 
 /* homepage partials */
 @import "partials/homepage/homehero";
-@import "partials/homepage/slider";
-@import "partials/homepage/homesubnav";
 @import "partials/homepage/homeportal";
 @import "partials/homepage/homenews";
 @import "partials/homepage/homestories";
+@import "partials/homepage/homebuttons";
+@import "partials/homepage/homefourthrow";
+@import "partials/homepage/homefooter";
 
 /* program page partials */
 @import "partials/program/program-hero";
@@ -44,3 +52,17 @@
 @import "partials/program/program-degrees";
 @import "partials/program/program-instructors";
 @import "partials/program/program-student";
+
+/*content page partials */
+@import "partials/content/left-column";
+
+
+/*landing page partials */
+@import "partials/landing/left-column";
+
+/* president's page */
+@import "partials/president";
+
+/* legacy, i.e. stuff to get rid of eventually */
+@import "partials/legacy/carousel";
+@import "partials/legacy/programpage";

@@ -6,6 +6,8 @@ COLORS
 
 $brand-purple: #502d7f;
 $brand-green: #bed600;
+$brand-alt-purple: #8d6cd1;
+$brand-alt-green: #719500;
 $brand-grey: #939598;
 $darker-green: shade($brand-green, 10%);
 $site-grey: #ede9e9;
@@ -16,7 +18,7 @@ GUTTER WIDTH
 *********
 */
 
-$gutter: 5px;
+$gutter: 15px;
 
 /* 
 ************

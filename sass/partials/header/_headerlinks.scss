@@ -5,6 +5,7 @@
 }
 
 .header-links {
+	@extend .unstyled;
 	display: none; 
 	position: absolute;
 	top: 100%; 
