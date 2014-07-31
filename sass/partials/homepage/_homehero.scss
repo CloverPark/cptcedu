@@ -1,5 +1,6 @@
 .home-hero {
 	line-height: 0; /* fixes the space at the bottom */
+	position: relative; /* for the stripe decor */
  }
 
  .home-hero-img {
@@ -8,6 +9,17 @@
 
  .home-hero-wrapper{
 	 position: relative; /* for the absolute positioned cover */
+	 float: left;
+	 height: 454px; // hack until I resize images
+	overflow: hidden;	 
+	 @include breakpoint (mama-bear) {
+	 	width: (2*$mama-bear - 2 * $search-width - $gutter) / 3; // it takes some algebra to get here, but this is the width of the two buttons beneath it plus their gutter
+		margin-right: $gutter;
+	}
+	
+ @include breakpoint (papa-bear) {
+ 	width: (2*$papa-bear - 2 * $search-width - $gutter) / 3; 
+}
  }
  
 .home-sub-hero-wrapper{
@@ -34,26 +46,53 @@
 		 height: 158px;
 		 overflow: hidden;
 		 width: auto;
-		 padding: 0 !important; /* hack, fix this */		 
+		 padding: 0 !important; /* hack, fix this */
+		 width: ($mama-bear - $search-width - (2 * $gutter)) / 3; /* width of grid minus gutters divided by three */		 
  	}
 	@include breakpoint(papa-bear){
 		height: auto;
+		width: ($papa-bear - $search-width - (2 * $gutter)) / 3; /* width of grid minus gutters divided by three */
 	}
+	
+
 }
+
+
+.home-hero-cover p {
+ padding: 30px;
+ position: absolute;
+ left: -50px;
+ bottom: 90px;
+ opacity: 0;
+ color: white; /* for a little more contrast */
+ line-height: 1.25;
+ @include adjust-font-size-to($mediumlarge);
+}
+
+.home-hero-cover:hover p {
+ left: 0;
+ opacity: 1;
+ @include transition-delay(.1s);
+  @include transition-duration(.4s);
+}
+
 
  .home-hero-cover {
 	@extend .cover;
 	 bottom: -1px; /* sort of hacky, but covers the weird pixel at the bottom. And if it goes over in some browsers, it's just white on white background and thus invisible */
-	
 	 overflow: hidden;
 	 &:hover {
-		 background: rgba($brand-grey, .85);
-		 @include fade;	 
+		  cursor: pointer;
+		 background-color: rgba(shade($brand-grey, 50%), .7);
+		 @include fade;
+
 	 }
-	 @include breakpoint (mama-bear){
-	  right: $gutter;
-	 }
+
  }
+ 
+ 
+
+ 
  
  .home-sub-hero-wrapper .home-hero-cover {
 	 @include breakpoint(mama-bear){
@@ -63,26 +102,25 @@
  }
  
 
- .home-hero-cover p {
-	 padding: 30px;
-	 position: absolute;
-	 opacity: 0;
-	 left: 0;
-	 bottom: 90px;
-	 color: white; /* for a little more contrast */
-	 line-height: 1.25;
-	 @include adjust-font-size-to($mediumlarge);
+
+
+ 
+ .home-hero-header {
+	  @include adjust-font-size-to($xxl);
+	  line-height: 1;
+	  padding: 10px;
+	  position: absolute;
+	  bottom: 4*$gutter;
+	  color: white;
+	  @include breakpoint(mama-bear){
+		  left: 40px;
+  	}
  }
  
- .home-hero-cover:hover {
-	 cursor: pointer;
-	 p {
-		 opacity: 1;
-		 transition: opacity 0.3s .1s ease;
-	 }
- }
-
- .home-hero-header,
+ 
+ 
+ 
+ 
  .home-sub-hero-header {
 	 background-color: rgba($brand-purple, .7);
 	 display: inline;
@@ -93,35 +131,14 @@
 	 left: 0;
 	 width: 100%;
 	 text-align: center;
+	 @include adjust-font-size-to($medium);
 	 @include breakpoint(mama-bear){
-		 bottom: 40px;
-		 background-color: $brand-purple;
-		 width: auto;
+		  right: 0;
+		  padding: 10px;
  	}
  }
  
- .home-hero-header {
-	  @include adjust-font-size-to($xl);
-	  line-height: 1;
-	  padding: 10px;
-	  @include breakpoint(mama-bear){
-		  left: 40px;
-  	}
- }
- 
- .home-sub-hero-header {
-	@include adjust-font-size-to($medium);
-	padding: $gutter/2;
-	 line-height: 1.2;
-	 @extend .cover;
-	 @include breakpoint(mama-bear) {
-		 padding: 6px;
-		 left: $gutter;
-		 bottom: $gutter;
-		 right: auto;
-		 top: auto;
-	 }
- }
+
  
  .home-sub-hero-wrapper:last-child {
 	 @include breakpoint(mama-bear){
@@ -141,7 +158,12 @@
  	}
 	@include breakpoint(mama-bear){
 		margin-top: 0;
-		width: $col9;
+		@include breakpoint(mama-bear) {
+			width: ($mama-bear - $search-width - (2 * $gutter)) / 3; /* width of grid minus gutters divided by three */
+		}
+		@include breakpoint(papa-bear) {
+			width: ($papa-bear - $search-width - (2 * $gutter)) / 3; /* width of grid minus gutters divided by three */
+		}
 	}
  }
 
@@ -152,19 +174,25 @@
 	}
 	@include breakpoint(mama-bear){
 		width: auto;
+		
+		
+	}
+	
+	@include breakpoint(papa-bear) {
+		height: (454px - $gutter)/2; // obviously a super hack. Will fix once image sizes are ginalized.
+		
 	}
 }
 
-.home-sub-hero-wrapper .home-hero-cover p{
-	
-}
+
 
 .stripe-decor {
 	@include breakpoint(mama-bear){
-		 height: 331px; /* height of the hero image */
 		background-image: url("../images/green-stripes.png");
-	}
-	@include breakpoint(papa-bear){
-		 height: 437px; 
+		position: absolute;
+		width: $search-width;
+		top: 0;
+		bottom: 0;
+		left: 100%;
 	}
 }

@@ -3,13 +3,13 @@
  {
 	margin: 0 auto;
 	@include breakpoint(baby-bear) {
-		width: $baby-bear; 
+		width: $baby-bear - $search-width; 
 	}
 	@include breakpoint(mama-bear) {
-		width: $mama-bear; 
+		width: $mama-bear - $search-width; 
 	}
 	@include breakpoint(papa-bear) {
-		width: $papa-bear; 
+		width: $papa-bear - $search-width; 
 	}
 }
 

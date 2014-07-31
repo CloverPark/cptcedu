@@ -22,8 +22,17 @@
 	}
 }
 
-.social-icons li img {
+
+.social-icons a {
+	@include link-colors(white, $brand-purple);
+	@include fade;
+}
+
+
+.social-icons li i:before {
 	padding: 8px;
+	margin-left: 0;
+	
 	@include breakpoint(mama-bear){
 		float: left;
 	}

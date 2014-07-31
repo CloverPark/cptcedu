@@ -2,7 +2,6 @@
 	width: 100%;
 	padding: $gutter;
 	@include breakpoint(mama-bear){
-		width: 100%;
 		padding: 0;		
 	}
 }
@@ -26,8 +25,8 @@
 	
 	float: left;
 	position: relative;
-	width: 20%;
-	max-width: 65px;
+	width: 50px;
+	height: 50px;
 	@include breakpoint(papa-bear){
 		
 	}
@@ -42,6 +41,7 @@
 	float: left;
 	font-family: $heading-font;
 	padding-left: $gutter;
+	color: $brand-purple;
 	@include adjust-font-size-to($medium);
 	i:before {
 		margin: 0;
@@ -53,11 +53,13 @@
 .home-events-month {
 	width: 100%;
 	display: block;
-	padding: 4px 0;
+	
 	text-align: center;
-	background-color: $brand-purple;
-	color: white;
-	@include adjust-font-size-to($medium);
+	color: $brand-purple;
+	font-family: $heading-font;
+	@include adjust-font-size-to($small);
+	line-height: 1;
+	padding-top: 3px;
 }
 
 .home-events-date {
@@ -65,7 +67,11 @@
 	display: block;
 	text-align: center;
 	line-height: 1;
-	padding: 6px 0;
+	color: $brand-purple;
+	font-family: $heading-font;
+	@include adjust-font-size-to($large);
+	line-height: 1;
+	padding: 3px 0;
 }
 
 .home-events-popup {
@@ -92,6 +98,8 @@
 .event-calendar-link i {
 	&:before{
 		margin: 0;
-		padding-right: 7px;
+		padding-left: 0;
+		font-size: 2em;
+		vertical-align: bottom;
 	}
 }

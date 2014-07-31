@@ -58,6 +58,7 @@ h6 {
 	@include heading-size($medium);
 	text-transform: uppercase;
 	color: $brand-purple;
+	font-weight: 400; // gets too thin at this font size
 }
 
 body {

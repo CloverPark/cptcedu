@@ -39,20 +39,17 @@
 	top: 400% + 100%; /* 100% plus the height of the nav */
 	left: 0;
 	padding: 5px;
-	background-color: $brand-green;
 	background-color: rgba($brand-grey, .95);
 	width: 100%;
 	@include breakpoint(mama-bear){
 	/* spread the green background across the whole thing */
-		background-color: $brand-green;
+		background-color: $darker-green;
 		display: block;
-		background: center center no-repeat;
-		right: 0;
 		top: 0;
 		bottom: 0;
 		padding: 0;
-		left: auto;
-		width: $col1;
+		left: 100%;
+		width: $search-width;
 	}
 }
 

@@ -23,9 +23,18 @@
 .sub-footer-button {
 	width: 100%;
 	display: block;
-	margin: 0 0 $gutter 0;
-	@include button($brand-purple);
+	
+	@include adjust-font-size-to($mediumlarge);
+	padding-bottom: $gutter;
+
 	i {
 		padding-right: 7px;
-	}
+		&:before {
+			vertical-align: bottom;
+			padding-left: $gutter;
+		}
+	}	
+		a {
+			@include link-colors($brand-purple, $brand-purple);
+		}
 }

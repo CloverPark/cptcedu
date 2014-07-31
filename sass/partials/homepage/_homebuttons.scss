@@ -9,7 +9,7 @@
 .home-button-wrapper {
 	// these aren't in the grid system because they need to be equal width; not having padding on the last one messes that up
 	@include breakpoint(baby-bear) {
-		width: ($baby-bear - 30px) / 3; /* width of grid minus gutters divided by three */
+		width: ($baby-bear - (2 * $gutter)) / 3; /* width of grid minus gutters divided by three */
 		float: left;
 		margin-right: $gutter;
 		&:last-child{
@@ -17,10 +17,10 @@
 		}
 	}
 	@include breakpoint(mama-bear) {
-		width: ($mama-bear - 30px) / 3; /* width of grid minus gutters divided by three */
+		width: ($mama-bear - $search-width - (2 * $gutter)) / 3; /* width of grid minus gutters divided by three */
 	}
 	@include breakpoint(papa-bear) {
-		width: ($papa-bear - 30px) / 3; /* width of grid minus gutters divided by three */
+		width: ($papa-bear - $search-width - (2 * $gutter)) / 3; /* width of grid minus gutters divided by three */
 	}
 }
 
@@ -65,13 +65,30 @@
 
 .home-study {
 	display: none; /* hidden by default; activated by js */
-	padding: $gutter;
-	border: solid $gutter $brand-grey;
+
+	background: $brand-grey;
+	color: white; // will have to change to link colors when I put the links in
+	padding-left: 2*$gutter;
+	padding-top: 2*$gutter;
+	h5 {
+		font-weight: 400; // make it a little more legible
+	}
 }
+
+
+// very hacky. put this on the real home column system when I make it
+.home-study-column {
+	width: 33.333%;
+	float: left;
+	padding-right: $gutter;
+	
+}
+
+
 
 .home-study ul {
 	@extend .unstyled;
-	@include adjust-font-size-to($medium);
+	@include adjust-font-size-to($base);
 	margin-bottom: 2*$gutter;
 	@include pretty-bullets("../images/bullet-arrow.png"); /* should probably make this a site-wide thing */
 	li {

@@ -20,9 +20,11 @@
 	margin: $gutter 0 2*$gutter 0;
 }
 
-@mixin home-callout-row-size($fraction) {
-	@include breakpoint(baby-bear){
-		width: (768px - 3*$gutter) / $fraction; /* one third of the width of this section, minus the gutters */
+
+
+.home-callout-row-item {
+	@include breakpoint(baby-bear) {
+		width: ($baby-bear - (2 * $gutter)) / 3;
 		float: left;
 		margin-right: $gutter;
 		padding-right: 0;
@@ -30,36 +32,37 @@
 			margin-right: 0;
 		}
 	}
-	@include breakpoint(mama-bear) {
-		width: (661px - 3*$gutter) / $fraction; /* width of grid minus gutters divided by three */
-	}
-	@include breakpoint(papa-bear) {
-		width: (866.6px - 3*$gutter) / $fraction; /* width of grid minus gutters divided by three. Actual width is 867px, but Chrome is doing something strange with the rounding. This fixes that. */
-	}
+	
 }
+
+
 
 
 .home-callout-row-item-large {
-	@include breakpoint(baby-bear){
-		width: (768px - 3*$gutter) / 2 + 15px; /* one third of the width of this section, minus the gutters */
-		float: left;
-		margin-right: $gutter;
-		padding-right: 0;
-		&:last-child{
-			margin-right: 0;
-		}
-	}
+	@extend .home-callout-row-item;
 	@include breakpoint(mama-bear) {
-		width: ((661px - 3*$gutter) / 2) + 15px; /* width of grid minus gutters divided by three */
+		width: ((($mama-bear - $search-width) * ($col16 / 100%)) - 3*$gutter) / 2 + $gutter; /* Okay, so this is the width of the overall grid times the width of this section (col16) */
 	}
 	@include breakpoint(papa-bear) {
-		width: (866.6px - 3*$gutter) / 2 + 15px; /* width of grid minus gutters divided by three. Actual width is 867px, but Chrome is doing something strange with the rounding. This fixes that. */
+		width: ((($papa-bear - $search-width) * ($col16 / 100%)) - 3*$gutter) / 2 + $gutter; /* Okay, so this is the width of the overall grid times the width of this section (col16) */
 	}
 }
 
+
+
+
 .home-callout-row-item-small{
-	@include home-callout-row-size(4);
+	@extend .home-callout-row-item;
+	@include breakpoint(mama-bear) {
+		width: ((($mama-bear - $search-width) * ($col16 / 100%)) - 3*$gutter) / 4; /* Okay, so this is the width of the overall grid times the width of this section (col16) */
+	}
+	@include breakpoint(papa-bear) {
+		width: ((($papa-bear - $search-width) * ($col16 / 100%)) - 3*$gutter) / 4; /* Okay, so this is the width of the overall grid times the width of this section (col16) */
+	}
 }
+
+
+
 
 @mixin home-callout($color) {
 	@include link-colors(white, white);
@@ -69,12 +72,13 @@
 	font-family: $heading-font;
 	@include adjust-font-size-to($mediumlarge);
 	text-transform: uppercase;
-	text-align: center;
-	padding: 8px;
+	padding: $gutter/2 2*$gutter;
 	margin-bottom: $gutter;
+	
 	&:hover {
 		@include fade;
 		background: shade($color, 30%);
+		
 	}
 	@include breakpoint(mama-bear){
 		margin: 0;
@@ -91,16 +95,17 @@
 }
 
 .home-callout-2 {
-	@include home-callout($brand-grey);
+	@include home-callout(tint(black, 30%));
+	
 }
 
 .home-callout-3 {
-	@include home-callout($brand-alt-purple);
+	@include home-callout($brand-purple);
 	margin: 0; // this one will have a double margin on smaller views
 }
 
 .home-callout-4 {
-	@include home-callout($brand-purple);
+	@include home-callout($brand-alt-purple);
 }
 
 .home-callout-5 {
@@ -108,7 +113,7 @@
 }
 
 .home-callout-6 {
-	@include home-callout(tint(black, 30%));
+	@include home-callout($brand-grey);
 }
 
 
@@ -171,11 +176,11 @@
 	
 	
 	@include breakpoint(mama-bear){
-		width: (661px - 3*$gutter)/4;
+		width: ((($mama-bear - $search-width) * ($col16 / 100%)) - 3 * $gutter)/4;
 	}
 	
 	@include breakpoint(papa-bear){
-		width: (866.5px - 3*$gutter)/4; // same rounding error
+		width: ((($papa-bear - $search-width) * ($col16 / 100%)) - (3 * $gutter))/4;
 	}
 }
 
@@ -183,48 +188,54 @@
 .home-services-wrapper {
 	position: relative;
 	line-height: 0;
+	text-align: center;
+
+	
 }
 
 
 
 .home-services-title {
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	left: 0;
 	right: 0;
-	text-align: center;
+	padding: $gutter;
+	text-align: left;
 	color: white;
 	margin: 0;
-	padding: $gutter 0;
 	z-index: 1000;
 	font-weight: 600;
+
 }
 
 
-@mixin home-services-cover($color) {
+@mixin home-services-cover {
 	@extend .cover;
-	&:hover { 
-		background-color: rgba($color, .9);
+	bottom: -1px; //hacky
+		background-color: rgba(shade($brand-grey, 50%), .7);
 		@include fade;
-	}	
+		&:hover {
+			background-color: rgba(shade($brand-grey, 50%), 0);
+		}
 }
 
 
 .home-services-cover-1 {
-	@include home-services-cover($brand-purple);
+	@include home-services-cover;
 }
 
 .home-services-cover-2 {
-	@include home-services-cover($brand-alt-green);
+	@include home-services-cover;
 }
 
 
 .home-services-cover-3 {
-	@include home-services-cover($brand-grey);
+	@include home-services-cover;
 }
 
 
 .home-services-cover-4 {
-	@include home-services-cover($brand-alt-purple);
+	@include home-services-cover;
 }
 

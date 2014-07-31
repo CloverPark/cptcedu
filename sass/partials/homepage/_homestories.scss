@@ -1,18 +1,42 @@
 .home-stories-wrapper {
-	background: $site-grey;
-	padding: $gutter;
-	margin-top: $gutter;
-	@include breakpoint(mama-bear){
-	padding: 2*$gutter 0;
+	padding: 2*$gutter;
+	h6 {
+		font-family: $text-font;
+	}
+	a {
+		@include link-colors ($text-color, $text-color);
 	}
 }
 
+
 .home-stories-row {
 	margin-top: $gutter; 
+	background: shade($site-grey, 0);
+	
 	h6 {
 		text-transform: none;
 	}
 }
+
+
+// pretty much everything beneath this comment is terrible and needs redoing before launch. It's basically a hacked-together grid overriding the real grid
+
+
+
+.home-stories-row-item {
+	width: (806px - (4*$gutter))/3; 
+	float: left;
+	margin-right: 2*$gutter;
+	&:last-child{
+		margin-right: 0;
+	}
+}
+
+.home-stories-wrapper .col16 {
+	padding-right: 0 !important;
+}
+
+
 
 
 .home-stories-row .col6 {
